@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://yoursite.com/images/backend-arch.png">
 <meta property="og:image" content="http://yoursite.com/images/graphql-uml.jpg">
 <meta property="og:image" content="http://yoursite.com/images/graphiql-screenshot.jpeg">
-<meta property="og:updated_time" content="2018-07-29T23:13:12.304Z">
+<meta property="og:updated_time" content="2018-07-30T01:59:20.300Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ten questions that prevent you from using GraphQL">
 <meta name="twitter:description" content="1. What is GraphQL?In terms of official definition, GraphQL is a query language for the API. GraphQL only defines how the query language syntax, how specific statements are executed, and so on. Just l">
@@ -266,11 +266,15 @@ Def get:
 
 <p>This is a simple python code that uses Django’s QuerySet to fetch data from the database. Suppose we have two tables in our database. The relationship between User and UserScore is as follows:</p>
 <p><img src="/images/graphql-uml.jpg" alt="graphql-uml"></p>
-<p>Since the <strong>user’s score</strong> is not saved in the <strong>User table</strong>, and because the QuerySet has lazy loading, in the for loop, every time you get the user.score, you will end up querying your database for the score data every single time. Ideally it should be an one time query job and now it becomes a N+1 queries.</p>
+<p>Since the <strong>user’s score</strong> is not saved in the <strong>User table</strong>, and because the QuerySet has lazy loading feature, in the for loop, every time you get the user.score you will end up querying your database for the score data every single time in the loop. Ideally it should be an one time query job and now it becomes a N+1 queries.</p>
 <p>Relative to RESTful, it is easier to cause N+1 problems in GraphQL. Mainly due to the layer-by-layer parsing of GraphQL query, see how GraphQL executes queries on <a href="https://graphql.org/learn/execution/" title="GraphqlExecution" target="_blank" rel="noopener">GraphqlExecution</a> for more details.</p>
 <h4 id="6-2-How-to-solve-the-N-1-problem-in-GraphQL"><a href="#6-2-How-to-solve-the-N-1-problem-in-GraphQL" class="headerlink" title="6.2. How to solve the N + 1 problem in GraphQL?"></a>6.2. How to solve the N + 1 problem in GraphQL?</h4><p>The following solutions are only for relational databases. If you are using NoSQL in your project, there may be a big difference for your solution.</p>
-<p>For a <strong>one-to-one relationship</strong> (such as the relationship between User and UserScore mentioned in the example above), when you fetch data from the database, join the required data into a table. Don’t wait for the ORM framework to lazily load the data you need.</p>
-<p>For a <strong>many-to-one or many-to-many relationship</strong>, you’ll need a tool library called <strong>DataLoader</strong>. Among them, Facebook provides their implementation of DataLoader for the Node.js. The main function of DataLoader is batching &amp; caching, which can merge multiple database query requests into one, and the loaded data can be directly obtained from the DataLoader’s cache space.</p>
+<ul>
+<li><p>For a <strong>one-to-one relationship</strong> (such as the relationship between User and UserScore mentioned in the example above), when you fetch data from the database, join the required data into a table. Don’t wait for the ORM framework to lazily load the data you need.</p>
+</li>
+<li><p>For a <strong>many-to-one or many-to-many relationship</strong>, you’ll need a tool library called <strong>DataLoader</strong>. Among them, Facebook provides their implementation of DataLoader for the Node.js. The main function of DataLoader is batching &amp; caching, which can merge multiple database query requests into one, and the loaded data can be directly obtained from the DataLoader’s cache space.</p>
+</li>
+</ul>
 <h3 id="7-Is-there-any-way-to-happily-debug-the-GraphQL-interface"><a href="#7-Is-there-any-way-to-happily-debug-the-GraphQL-interface" class="headerlink" title="7. Is there any way to happily debug the GraphQL interface?"></a>7. Is there any way to happily debug the GraphQL interface?</h3><p>GraphiQL / <a href="https://graphql.org/swapi-graphql/" title="DEMO" target="_blank" rel="noopener">DEMO</a></p>
 <p>Using GraphiQL makes it easy to feel the joy of “code as a document.”</p>
 <p><img src="/images/graphiql-screenshot.jpeg" alt="graphql-uml"></p>
