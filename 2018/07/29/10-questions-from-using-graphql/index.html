@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://yoursite.com/images/backend-arch.png">
 <meta property="og:image" content="http://yoursite.com/images/graphql-uml.jpg">
 <meta property="og:image" content="http://yoursite.com/images/graphiql-screenshot.jpeg">
-<meta property="og:updated_time" content="2018-07-30T02:39:15.552Z">
+<meta property="og:updated_time" content="2018-07-30T05:29:59.908Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="9 questions that prevent you from using GraphQL">
 <meta name="twitter:description" content="1. What is GraphQL?In terms of official definition, GraphQL is a query language for the API. GraphQL only defines how the query language syntax, how specific statements are executed, and so on. Just l">
@@ -177,33 +177,26 @@
 <li>Look at the <strong>client implementation</strong>: Relay or appollo-client, etc.</li>
 <li>Learn to use <strong>DataLoader</strong> to get list data.</li>
 </ul>
-<h3 id="3-What-is-the-difference-between-GraphQL-and-RESTful"><a href="#3-What-is-the-difference-between-GraphQL-and-RESTful" class="headerlink" title="3. What is the difference between GraphQL and RESTful?"></a>3. What is the difference between GraphQL and RESTful?</h3><p>First of all, let’s talk about a picture from graphql.org. Both REST and GraphQL are external service interfaces of the system hosted by the server, so that those two APIs can be coexist, and even share the same business logic such as Authorization…etc.</p>
+<h3 id="3-What-is-the-difference-between-GraphQL-and-RESTful"><a href="#3-What-is-the-difference-between-GraphQL-and-RESTful" class="headerlink" title="3. What is the difference between GraphQL and RESTful?"></a>3. What is the difference between GraphQL and RESTful?</h3><p>First of all, let’s talk about a picture below. Both REST and GraphQL are external service interfaces of the system that hosted by the server, so that those two APIs can be co-exist, and even they share the same business logic such as Authorization…etc.</p>
 <p><img src="/images/backend-arch.png" alt="backend-arch"></p>
-<p>So what is the difference between using GraphQL and RESTful? I think it is mainly two points.</p>
-<ul>
-<li><p>Entry point<br>The core idea of ​​RESTful is resources, and a RESTful interface only operates on a single resource; therefore, when you use RESTful, you design <strong>a large number of interfaces.</strong> GraphQL is a single entry, generally configured in [host]/graphql/, and <strong>all resources are retrieved or modified from the entry via the graphql statement</strong> (of course GraphQL also supports multiple entries, but obviously the number of multiple entries is much smaller than RESTful).</p>
-</li>
-<li><p>Data relevance<br>The resources that RESTful operates on are relatively discrete; GraphQL’s data is more holistic.</p>
-</li>
-</ul>
+<p>So what is the difference between using GraphQL and RESTful? It is mainly two points.</p>
+<h4 id="Entry-point"><a href="#Entry-point" class="headerlink" title="* Entry point"></a>* Entry point</h4><p>The main idea of ​​RESTful is resources, and a RESTful interface only operates on a single resource; therefore, when you use RESTful, you design <strong>a large number of interfaces.</strong> GraphQL is a single entry, generally configured in [host]/graphql/, and <strong>all resources are retrieved or modified from the entry via the graphql statement</strong> (of course GraphQL also supports multiple entries, but obviously the number of multiple entries is much smaller than RESTful).</p>
+<h4 id="Data-relevance"><a href="#Data-relevance" class="headerlink" title="* Data relevance"></a>* Data relevance</h4><p>The resources that RESTful operates on are relatively discrete; GraphQL’s data is more holistic.</p>
 <p>For example, if you want to get a friend of A’s friend, what should you do with RESTful?</p>
-<p>Suppose we have such an interface:</p>
+<p>Suppose we have such an interface like this:</p>
 <pre><code>
 GET /user/:userId/friends/
 </code></pre>
-And A has 20 good friends, then we need to send 20 + 1 = 21 REST requests in total.
 
-Or we designed the following interfaces for this particular scenario:
-
+<p>And A has 20 good friends, then we need to send 20 + 1 = 21 REST requests in total.</p>
+<p>Or we designed the following interfaces for this particular scenario:</p>
 <pre><code>
 GET /user/:userId/friendsAndHisFriends/
 </code></pre>
-ok...... Although it looks awkward, it only takes one request!
 
-So what about GraphQL?
-
-First we need to define a Schema for User (GraphQL has a complete type system):
-
+<p>ok…… Although it looks awkward, it only takes one request!</p>
+<p>So what about GraphQL?</p>
+<p>First we need to <strong>define a Schema</strong> for User (GraphQL has a complete type system):</p>
 <pre><code>
 Type User {
   Id: ID!
@@ -233,14 +226,15 @@ Query ($userId: ID) {
   }
 }
 </code></pre>
-In the end, this request will be able to find out the friend's friends this damn requirement!! You might have discovered the this question: Can this query be written in an infinite loop? yep, you can do it! It is described on the official website of GraphQL:
+
+<p>In the end, this request finally will be able to find out the friend’s friends in this god damn requirement!! You might have discovered the this question: Can this query be written in an infinite loop? yep, you can do it! It is described on the official website of GraphQL:</p>
 <pre><code>
 It’s Graphs All the Way Down *
 </code></pre>
 
-<p>It is like a tree that extends infinitely downward. So in my opinion, GraphQL should be called TreeQL. Of course, in graph theory, Tree is Graph and it is not a problem. It should be noted that this will also lead to the topic of <strong>“N + 1 problem”</strong> - naive’s GraphQL server implementation will make this query extremely slow!</p>
-<h3 id="4-Can-GraphQL-modify-data"><a href="#4-Can-GraphQL-modify-data" class="headerlink" title="4. Can GraphQL modify data?"></a>4. Can GraphQL modify data?</h3><p>Looking at the above examples, you must be curious, graphQL seems to be a language that exists only for search queries, is there a way to modify data?</p>
-<p>The answer is: Yes.</p>
+<p>It is like a tree that extends infinitely downward. So in my opinion, GraphQL should be called TreeQL. Of course in graph theory, Tree is Graph and it is not a problem. It should be noted that this will also lead to the topic of <strong>“N + 1 problem”</strong> - naive’s GraphQL server implementation will make this query extremely slow!</p>
+<h3 id="4-Can-GraphQL-modify-data"><a href="#4-Can-GraphQL-modify-data" class="headerlink" title="4. Can GraphQL modify data?"></a>4. Can GraphQL modify data?</h3><p>The answer is: Yes.</p>
+<p>Looking at the above examples, you must be curious, graphQL seems to be a language that exists only for search queries, is there a way to modify data?</p>
 <p>Just to make the GraphQL data platform more complete, the GraphQL standard includes an operator called <strong>mutation</strong>. Because I think this design is quite general, here is the offical link you can check out: <a href="http://graphql.org/learn/queries/#mutations" target="_blank" rel="noopener">http://graphql.org/learn/queries/#mutations</a></p>
 <h3 id="5-What-are-the-advantages-of-GraphQL-compared-to-RESTful"><a href="#5-What-are-the-advantages-of-GraphQL-compared-to-RESTful" class="headerlink" title="5. What are the advantages of GraphQL compared to RESTful?"></a>5. What are the advantages of GraphQL compared to RESTful?</h3><ul>
 <li><p>Data is more relevant and structured<br>This has been described in the third question in this article.</p>
@@ -255,7 +249,7 @@ It’s Graphs All the Way Down *
 </li>
 </ul>
 <h3 id="6-What-are-the-disadvantages-of-using-GraphQL"><a href="#6-What-are-the-disadvantages-of-using-GraphQL" class="headerlink" title="6. What are the disadvantages of using GraphQL?"></a>6. What are the disadvantages of using GraphQL?</h3><p>Speaking of the many advantages of GraphQL, is there any drawback? Of course, there it is.</p>
-<h4 id="6-1-N-1-problem"><a href="#6-1-N-1-problem" class="headerlink" title="6.1. N+1 problem"></a>6.1. N+1 problem</h4><p>The biggest problem is that when you implement your GraphQL server interface, it is easy to write very inefficient code which is the “N+1 problem.”</p>
+<h4 id="6-1-N-1-problem"><a href="#6-1-N-1-problem" class="headerlink" title="6.1. N+1 problem"></a>6.1. N+1 problem</h4><p>The biggest problem is that when you implement your GraphQL server interface, it is easy to write very inefficient code which is called “N+1 problem.”</p>
 <p>What is the N+1 issue? First let’s take a simple example:</p>
 <pre><code>
 Def get:
@@ -320,7 +314,7 @@ Query {
 }
 </code></pre>
 
-<h3 id="9-How-does-user-verification-work-in-GraphQL"><a href="#9-How-does-user-verification-work-in-GraphQL" class="headerlink" title="9.  How does user verification work in GraphQL?"></a>9.  How does user verification work in GraphQL?</h3><p>You can look back. 3. What is the difference between GraphQL and RESTful? The answer is in the picture: Authentication is a business logic layer, don’t let GraphQL take too much work.</p>
+<h3 id="9-How-does-user-verification-work-in-GraphQL"><a href="#9-How-does-user-verification-work-in-GraphQL" class="headerlink" title="9.  How does user verification work in GraphQL?"></a>9.  How does user verification work in GraphQL?</h3><p>You can look back. 3. What is the difference between GraphQL and RESTful? The answer is in the picture: Authentication is a business logic layer, you shouldn’t let GraphQL handle too much work.</p>
 <p>Further reading: GraphQL <a href="https://graphql.org/learn/authorization/" title="Authentication" target="_blank" rel="noopener">Authentication</a></p>
 
       
@@ -481,11 +475,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bash</a>
+                <a href="javascript:void(0)" class="js-tag color3">GraphQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">GraphQL</a>
+                <a href="javascript:void(0)" class="js-tag color5">bash</a>
               </li>
             
             <div class="clearfix"></div>
