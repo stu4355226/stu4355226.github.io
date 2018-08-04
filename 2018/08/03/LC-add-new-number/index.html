@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return i">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-08-04T04:49:59.132Z">
+<meta property="og:updated_time" content="2018-08-04T04:53:22.564Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LC 2. Add Two Numbers">
 <meta name="twitter:description" content="You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return i">
@@ -166,31 +166,12 @@
         <p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
 <p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
 <p>Example:</p>
-<p><pre><code><br>Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>Output: 7 -&gt; 0 -&gt; 8<br>Explanation: 342 + 465 = 807.<br></code></pre><br><a id="more"></a></p>
+<p><pre><code>Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>Output: 7 -&gt; 0 -&gt; 8<br>Explanation: 342 + 465 = 807.</code></pre></p>
+<p><br><a id="more"></a></p>
 <p>Code:</p>
 <p>First of all, I create 2 pointers (result and temp). I use temp to preform the addition and the pointer will move to the end when the while loop is complete, then return the result.next pointer for the answer.</p>
-<p><pre><code><br>/**</code></pre></p>
-<ul>
-<li>Definition for singly-linked list.</li>
-<li>public class ListNode {</li>
-<li>public int val;</li>
-<li>public ListNode next;</li>
-<li>public ListNode(int x) { val = x; }</li>
-<li>}<br>**/<br>public class Solution {<br> public ListNode AddTwoNumbers(ListNode l1, ListNode l2) {<pre><code>var result = new ListNode(0);
-var temp = result;
-int carry = 0;
-while(l1 != null || l2 != null || carry &gt;0)
-{
-    int newValue = carry + (l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val);
-    carry = newValue / 10;
-    temp.next = new ListNode(newValue % 10);
-    temp = temp.next;
-    l1 = l1 == null ? null : l1.next;
-    l2 = l2 == null ? null : l2.next;
-}
-return result.next;
-</code></pre> }<br>}<br></li>
-</ul>
+<p><pre><code>public class Solution {<br>    public ListNode AddTwoNumbers(ListNode l1, ListNode l2) {<br>        var result = new ListNode(0);<br>        var temp = result;<br>        int carry = 0;<br>        while(l1 != null || l2 != null || carry &gt;0)<br>        {<br>            int newValue = carry + (l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val);<br>            carry = newValue / 10;<br>            temp.next = new ListNode(newValue % 10);<br>            temp = temp.next;<br>            l1 = l1 == null ? null : l1.next;<br>            l2 = l2 == null ? null : l2.next;<br>        }<br>        return result.next;<br>    }<br>}</code></pre></p>
+<p></p>
 
       
 
@@ -350,11 +331,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bash</a>
+                <a href="javascript:void(0)" class="js-tag color4">Medium, LeetCode, LinkedList</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Medium, LeetCode, LinkedList</a>
+                <a href="javascript:void(0)" class="js-tag color5">bash</a>
               </li>
             
             <div class="clearfix"></div>
