@@ -141,6 +141,98 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Middle-of-the-Linked-List" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="2018/08/04/Middle-of-the-Linked-List/">876. Middle of the Linked List</a>
+    </h1>
+  
+
+        
+        <a href="2018/08/04/Middle-of-the-Linked-List/" class="archive-article-date">
+  	<time datetime="2018-08-04T18:21:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Given a non-empty, singly linked list with head node head, return a middle node of linked list.</p>
+<p>If there are two middle nodes, return the second middle node.</p>
+<p>Example 1:</p>
+<p><pre><code>Input: [1,2,3,4,5]<br>Output: Node 3 from this list (Serialization: [3,4,5])<br>The returned node has value 3.  (The judge’s serialization of this node is [3,4,5]).<br>Note that we returned a ListNode object ans, such that:<br>ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, and ans.next.next.next = NULL.<br></code></pre><br>Example 2:</p>
+<p><pre><code>Input: [1,2,3,4,5,6]<br>Output: Node 4 from this list (Serialization: [4,5,6])<br>Since the list has two middle nodes with values 3 and 4, we return the second one.<br> </code></pre></p>
+<p>Note:</p>
+<p>The number of nodes in the given list will be between 1 and 100.</p>
+<p>code:</p>
+<p>I create 2 pointers which are ‘fast’ and ‘slow’. fast pointer goes 2 time faster then slow, so that when fast pointer reaches to the end, we can see the slow pointer is at middle of the linked list.</p>
+<p>depends on fast pointer is at the end of the list or 2 node away from the end. I return either slow.next or slow for the answer.</p>
+<p><pre><code><br>public class Solution {<br>    public ListNode MiddleNode(ListNode head) {<br>        var result =  new ListNode(0);<br>        var fast = head;<br>        var slow = head;<br>        while(fast.next != null &amp;&amp; fast.next.next != null)<br>        {<br>            fast = fast.next.next;<br>            slow = slow.next;<br>        }<br>        if(fast.next != null)<br>            result.next = slow.next;<br>        else<br>            result.next = slow;<br>        return result.next;<br>    }<br>}<br></code></pre></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LinkedList</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Easy</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="2018/08/04/Middle-of-the-Linked-List/">Read more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-LC-add-new-number" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -470,10 +562,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">bash</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">GraphQL</a>
               </li>
              
@@ -487,6 +575,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Medium</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Easy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bash</a>
               </li>
             
             <div class="clearfix"></div>

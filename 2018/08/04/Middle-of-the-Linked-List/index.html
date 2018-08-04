@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>bash_script | Blog</title>
+  <title>876. Middle of the Linked List | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Writing bash script in mac is fair easy job to do, and can automate a lot of stuff to save your time.1. First step is to open a file using any of text edits you have2. Make sure you add #!/bin/bash in">
-<meta name="keywords" content="bash">
+  <meta name="description" content="Given a non-empty, singly linked list with head node head, return a middle node of linked list. If there are two middle nodes, return the second middle node. Example 1: Input: [1,2,3,4,5]Output: Node">
+<meta name="keywords" content="LinkedList,Leetcode,Easy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="bash_script">
-<meta property="og:url" content="http://yoursite.com/2018/07/28/bash-script/index.html">
+<meta property="og:title" content="876. Middle of the Linked List">
+<meta property="og:url" content="http://yoursite.com/2018/08/04/Middle-of-the-Linked-List/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="Writing bash script in mac is fair easy job to do, and can automate a lot of stuff to save your time.1. First step is to open a file using any of text edits you have2. Make sure you add #!/bin/bash in">
+<meta property="og:description" content="Given a non-empty, singly linked list with head node head, return a middle node of linked list. If there are two middle nodes, return the second middle node. Example 1: Input: [1,2,3,4,5]Output: Node">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-07-29T23:13:29.491Z">
+<meta property="og:updated_time" content="2018-08-04T18:21:53.897Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="bash_script">
-<meta name="twitter:description" content="Writing bash script in mac is fair easy job to do, and can automate a lot of stuff to save your time.1. First step is to open a file using any of text edits you have2. Make sure you add #!/bin/bash in">
+<meta name="twitter:title" content="876. Middle of the Linked List">
+<meta name="twitter:description" content="Given a non-empty, singly linked list with head node head, return a middle node of linked list. If there are two middle nodes, return the second middle node. Example 1: Input: [1,2,3,4,5]Output: Node">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -143,36 +143,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-bash-script" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Middle-of-the-Linked-List" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      bash_script
+      876. Middle of the Linked List
     </h1>
   
 
         
         <a href="" class="archive-article-date">
-  	<time datetime="2018-07-28T19:01:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-28</time>
+  	<time datetime="2018-08-04T18:21:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Writing-bash-script-in-mac-is-fair-easy-job-to-do-and-can-automate-a-lot-of-stuff-to-save-your-time"><a href="#Writing-bash-script-in-mac-is-fair-easy-job-to-do-and-can-automate-a-lot-of-stuff-to-save-your-time" class="headerlink" title="Writing bash script in mac is fair easy job to do, and can automate a lot of stuff to save your time."></a>Writing bash script in mac is fair easy job to do, and can automate a lot of stuff to save your time.</h2><h3 id="1-First-step-is-to-open-a-file-using-any-of-text-edits-you-have"><a href="#1-First-step-is-to-open-a-file-using-any-of-text-edits-you-have" class="headerlink" title="1. First step is to open a file using any of text edits you have"></a>1. First step is to open a file using any of text edits you have</h3><h3 id="2-Make-sure-you-add-bin-bash-in-the-head-of-the-file"><a href="#2-Make-sure-you-add-bin-bash-in-the-head-of-the-file" class="headerlink" title="2. Make sure you add #!/bin/bash in the head of the file."></a>2. Make sure you add #!/bin/bash in the head of the file.</h3><a id="more"></a>
-<pre><code>#!/bin/bash      tells the terminal that you are using bash shell
-
-echo hello world    prints out “hello world” in the terminal</code></pre>
-
-<h3 id="3-Go-to-terminal-go-to-the-file-folder-and-use-below-command"><a href="#3-Go-to-terminal-go-to-the-file-folder-and-use-below-command" class="headerlink" title="3. Go to terminal, go to the file folder and use below command:"></a>3. Go to terminal, go to the file folder and use below command:</h3><pre><code>ps> chmod 700 [file_name]</code></pre>
-
-<h3 id="4-Execute-your-shell-script"><a href="#4-Execute-your-shell-script" class="headerlink" title="4. Execute your shell script"></a>4. Execute your shell script</h3><pre><code>ps> ./[file_name]</code></pre>
-
-
+        <p>Given a non-empty, singly linked list with head node head, return a middle node of linked list.</p>
+<p>If there are two middle nodes, return the second middle node.</p>
+<p>Example 1:</p>
+<p><pre><code>Input: [1,2,3,4,5]<br>Output: Node 3 from this list (Serialization: [3,4,5])<br>The returned node has value 3.  (The judge’s serialization of this node is [3,4,5]).<br>Note that we returned a ListNode object ans, such that:<br>ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, and ans.next.next.next = NULL.<br></code></pre><br>Example 2:</p>
+<p><pre><code>Input: [1,2,3,4,5,6]<br>Output: Node 4 from this list (Serialization: [4,5,6])<br>Since the list has two middle nodes with values 3 and 4, we return the second one.<br> </code></pre></p>
+<p>Note:</p>
+<p>The number of nodes in the given list will be between 1 and 100.</p>
+<p>code:</p>
+<p>I create 2 pointers which are ‘fast’ and ‘slow’. fast pointer goes 2 time faster then slow, so that when fast pointer reaches to the end, we can see the slow pointer is at middle of the linked list.</p>
+<p>depends on fast pointer is at the end of the list or 2 node away from the end. I return either slow.next or slow for the answer.</p>
+<p><pre><code><br>public class Solution {<br>    public ListNode MiddleNode(ListNode head) {<br>        var result =  new ListNode(0);<br>        var fast = head;<br>        var slow = head;<br>        while(fast.next != null &amp;&amp; fast.next.next != null)<br>        {<br>            fast = fast.next.next;<br>            slow = slow.next;<br>        }<br>        if(fast.next != null)<br>            result.next = slow.next;<br>        else<br>            result.next = slow;<br>        return result.next;<br>    }<br>}<br></code></pre></p>
 
       
 
@@ -186,7 +187,15 @@ echo hello world    prints out “hello world” in the terminal</code></pre>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">bash</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LinkedList</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Easy</a>
         		</li>
       		
 		</ul>
@@ -205,15 +214,11 @@ echo hello world    prints out “hello world” in the terminal</code></pre>
   
 <nav id="article-nav">
   
-    <a href="../../29/10-questions-from-using-graphql/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          9 questions that prevent you from using GraphQL
-        
-      </div>
-    </a>
   
+    <a href="../../03/LC-add-new-number/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LC 2. Add Two Numbers</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
