@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/8 | Blog</title>
+  <title>872. Leaf-Similar Trees | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="csharp">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/08/index.html">
+  <meta name="description" content="Consider all the leaves of a binary tree.  From left to right order, the values of those leaves form a leaf value sequence. For example, in the given tree above, the leaf value sequence is (6, 7, 4, 9">
+<meta name="keywords" content="LeetCode,Tree,Easy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="872. Leaf-Similar Trees">
+<meta property="og:url" content="http://yoursite.com/2018/08/04/Leaf-Similar-Tree/index.html">
 <meta property="og:site_name" content="Blog">
+<meta property="og:description" content="Consider all the leaves of a binary tree.  From left to right order, the values of those leaves form a leaf value sequence. For example, in the given tree above, the leaf value sequence is (6, 7, 4, 9">
 <meta property="og:locale" content="English">
+<meta property="og:updated_time" content="2018-08-05T03:37:14.406Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Blog">
+<meta name="twitter:title" content="872. Leaf-Similar Trees">
+<meta name="twitter:description" content="Consider all the leaves of a binary tree.  From left to right order, the values of those leaves form a leaf value sequence. For example, in the given tree above, the leaf value sequence is (6, 7, 4, 9">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -54,7 +58,7 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="../../../index.html">Main page</a></li>
+				<li><a href="../../../../index.html">Main page</a></li>
 	        
 			</ul>
 		</nav>
@@ -124,7 +128,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 100%"><a href="../../../index.html">Main page</a></li>
+					<li style="width: 100%"><a href="../../../../index.html">Main page</a></li>
 		        
 				</ul>
 			</nav>
@@ -139,36 +143,56 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Leaf-Similar-Tree" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href=".." class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="../../../2018/08/04/Leaf-Similar-Tree/" class="archive-article-date">
-  	<time datetime="2018-08-05T03:36:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-04</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../../../2018/08/04/Leaf-Similar-Tree/">872. Leaf-Similar Trees</a>
+    <h1 class="article-title" itemprop="name">
+      872. Leaf-Similar Trees
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="" class="archive-article-date">
+  	<time datetime="2018-08-05T03:36:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Consider all the leaves of a binary tree.  From left to right order, the values of those leaves form a leaf value sequence.</p>
+<p>For example, in the given tree above, the leaf value sequence is (6, 7, 4, 9, 8).</p>
+<p>Two binary trees are considered leaf-similar if their leaf value sequence is the same.</p>
+<p>Return true if and only if the two given trees with head nodes root1 and root2 are leaf-similar.</p>
+ <a id="more"></a>
+<p>Note:</p>
+<p>Both of the given trees will have between 1 and 100 nodes.</p>
+<p>Code:</p>
+<p>I create 2 stacks and use DFS in using post-order traversal. In the DFS helper function it only returns the button value when left and right sub-nodes are empty, and do then the comparison.</p>
+<p>If both the values are not match, it returns false. In the end we return !any() to make sure both the stacks are empty.</p>
+<p><pre><code>public class Solution {<br>    public bool LeafSimilar(TreeNode root1, TreeNode root2) {<br>        Stack<treenode> stack1 = new Stack<treenode>();<br>        Stack<treenode> stack2 = new Stack<treenode>();<br>        stack1.Push(root1);<br>        stack2.Push(root2);<br>        while(stack1.Any() &amp;&amp; stack2.Any())<br>            if(dfs(stack1) != dfs(stack2))<br>                return false;<br>        return !stack1.Any() &amp;&amp; !stack2.Any();<br>    }</treenode></treenode></treenode></treenode></code></pre></p>
+<pre><code>private int dfs(Stack&lt;TreeNode&gt; s)
+{
+    while(true)
+    {
+        TreeNode node = s.Pop();
+        if(node.right != null) s.Push(node.right);
+        if(node.left != null) s.Push(node.left);
+        if(node.left == null &amp;&amp; node.right == null) return node.val;
+    }
+}
+</code></pre><p>}<br></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -188,111 +212,55 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="../../../2018/08/04/Middle-of-the-Linked-List/" class="archive-article-date">
-  	<time datetime="2018-08-04T18:21:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-04</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="../Middle-of-the-Linked-List/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">876. Middle of the Linked List</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../../../2018/08/04/Middle-of-the-Linked-List/">876. Middle of the Linked List</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Easy</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LinkedList</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="../../../2018/08/03/LC-add-new-number/" class="archive-article-date">
-  	<time datetime="2018-08-04T04:48:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../../../2018/08/03/LC-add-new-number/">LC 2. Add Two Numbers</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LinkedList</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Medium</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -314,8 +282,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
