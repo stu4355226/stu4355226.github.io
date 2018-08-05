@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>872. Leaf-Similar Trees | Blog</title>
+  <title>875. Koko Eating Bananas | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Consider all the leaves of a binary tree.  From left to right order, the values of those leaves form a leaf value sequence. For example, in the given tree above, the leaf value sequence is (6, 7, 4, 9">
-<meta name="keywords" content="LeetCode,Tree,Easy">
+  <meta name="description" content="Koko loves to eat bananas.  There are N piles of bananas, the i-th pile has piles[i] bananas.  The guards have gone and will come back in H hours. Koko can decide her bananas-per-hour eating speed of">
+<meta name="keywords" content="Leetcode,Medium,Array">
 <meta property="og:type" content="article">
-<meta property="og:title" content="872. Leaf-Similar Trees">
-<meta property="og:url" content="http://yoursite.com/2018/08/04/Leaf-Similar-Tree/index.html">
+<meta property="og:title" content="875. Koko Eating Bananas">
+<meta property="og:url" content="http://yoursite.com/2018/08/04/Koko-Eating-Bananas/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="Consider all the leaves of a binary tree.  From left to right order, the values of those leaves form a leaf value sequence. For example, in the given tree above, the leaf value sequence is (6, 7, 4, 9">
+<meta property="og:description" content="Koko loves to eat bananas.  There are N piles of bananas, the i-th pile has piles[i] bananas.  The guards have gone and will come back in H hours. Koko can decide her bananas-per-hour eating speed of">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-08-05T04:47:27.211Z">
+<meta property="og:updated_time" content="2018-08-05T06:38:07.660Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="872. Leaf-Similar Trees">
-<meta name="twitter:description" content="Consider all the leaves of a binary tree.  From left to right order, the values of those leaves form a leaf value sequence. For example, in the given tree above, the leaf value sequence is (6, 7, 4, 9">
+<meta name="twitter:title" content="875. Koko Eating Bananas">
+<meta name="twitter:description" content="Koko loves to eat bananas.  There are N piles of bananas, the i-th pile has piles[i] bananas.  The guards have gone and will come back in H hours. Koko can decide her bananas-per-hour eating speed of">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -143,38 +143,54 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Leaf-Similar-Tree" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Koko-Eating-Bananas" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      872. Leaf-Similar Trees
+      875. Koko Eating Bananas
     </h1>
   
 
         
         <a href="" class="archive-article-date">
-  	<time datetime="2018-08-05T03:36:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-04</time>
+  	<time datetime="2018-08-05T06:38:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Consider all the leaves of a binary tree.  From left to right order, the values of those leaves form a leaf value sequence.</p>
-<p>For example, in the given tree above, the leaf value sequence is (6, 7, 4, 9, 8).</p>
-<p>Two binary trees are considered leaf-similar if their leaf value sequence is the same.</p>
-<p>Return true if and only if the two given trees with head nodes root1 and root2 are leaf-similar.</p>
- <a id="more"></a>
+        <p>Koko loves to eat bananas.  There are <strong>N</strong> piles of bananas, the <strong>i</strong>-th pile has <strong>piles[i]</strong> bananas.  The guards have gone and will come back in H hours.</p>
+<p>Koko can decide her bananas-per-hour eating speed of <strong>K</strong>.  Each hour, she chooses some pile of bananas, and eats <strong>K</strong> bananas from that pile.  If the pile has less than K bananas, she eats all of them instead, and won’t eat any more bananas during this hour.</p>
+<p>Koko likes to eat slowly, but still wants to finish eating all the bananas before the guards come back.</p>
+<p>Return the minimum integer <strong>K</strong> such that she can eat all the bananas within <strong>H</strong> hours.</p>
+<p>Example 1:</p>
+<p><pre><code>Input: piles = [3,6,7,11], H = 8<br>Output: 4<br></code></pre><br>Example 2:</p>
+<p><pre><code>Input: piles = [30,11,23,4,20], H = 5<br>Output: 30<br></code></pre><br>Example 3:</p>
+<p><pre><code>Input: piles = [30,11,23,4,20], H = 6<br>Output: 23<br> </code></pre></p>
 <p>Note:</p>
-<p>Both of the given trees will have between 1 and 100 nodes.</p>
-<p>Code:</p>
-<p>I create 2 stacks and use DFS in using post-order traversal. In the DFS helper function it only returns the button value when left and right sub-nodes are empty, and do then the comparison.</p>
-<p>If both the values are not match, it returns false. In the end we return !any() to make sure both the stacks are empty.</p>
-<p><pre><code>public class Solution {<br>    public bool LeafSimilar(TreeNode root1, TreeNode root2) {<br>        Stack<treenode> stack1 = new Stack<treenode>();<br>        Stack<treenode> stack2 = new Stack<treenode>();<br>        stack1.Push(root1);<br>        stack2.Push(root2);<br>        while(stack1.Any() &amp;&amp; stack2.Any())<br>            if(dfs(stack1) != dfs(stack2))<br>                return false;<br>        return !stack1.Any() &amp;&amp; !stack2.Any();<br>    }<br></treenode></treenode></treenode></treenode></code></pre></p>
-<p><pre><code>private int dfs(Stack<treenode> s)<br>    {<br>        while(true)<br>        {<br>            TreeNode node = s.Pop();<br>            if(node.right != null) s.Push(node.right);<br>            if(node.left != null) s.Push(node.left);<br>            if(node.left == null &amp;&amp; node.right == null) return node.val;<br>        }<br>    }<br>}<br></treenode></code></pre></p>
+<p>1 &lt;= piles.length &lt;= 10^4<br>piles.length &lt;= H &lt;= 10^9<br>1 &lt;= piles[i] &lt;= 10^9</p>
+<a id="more"></a>
+<p>code:</p>
+<p>we see that the range of piles can be from 1 to 10^9.<br>so that when when I do the binary search, the low and high pointer in the array will be 1 and (int)1e9.</p>
+<p> After that, we find the mid value of low and high pointer and check if it meets the requirements to finish all the banana in time. If it meets the requirements, mid value will be set to high pointer and do the search again, if it doesn’t meet the requirements, the mid value will be set to low pointer + 1 and search.</p>
+<p>this way we can determine the time it takes to eat all the piles, and we return low pointer which is the smallest K for which  canFinish(K) &lt;= H.</p>
+<p><pre><code>public class Solution {<br>    public int MinEatingSpeed(int[] piles, int H) {<br>        int max = (int)1e9;<br>        int low = 1;<br>        int high = max;<br>        while(low &lt; high)<br>        {<br>            int mid = (low + high) / 2;<br>            if(canFinish(piles, mid, H))<br>                high = mid;<br>            else<br>                low = mid + 1;<br>        }<br>        return low;<br>    }</code></pre></p>
+<pre><code>private bool canFinish(int[] piles, int speed, int time)
+{
+    int total = 0;
+    foreach(var pile in piles)
+    {
+        total += (pile + speed - 1) / speed;
+        if(total &gt; time)
+            return false;
+    }
+    return true;
+}
+</code></pre><p>}<br></p>
 
       
 
@@ -188,15 +204,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Medium</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Easy</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Array</a>
         		</li>
       		
 		</ul>
@@ -215,18 +231,9 @@
   
 <nav id="article-nav">
   
-    <a href="../Koko-Eating-Bananas/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          875. Koko Eating Bananas
-        
-      </div>
-    </a>
   
-  
-    <a href="../Middle-of-the-Linked-List/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">876. Middle of the Linked List</div>
+    <a href="../Leaf-Similar-Tree/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">872. Leaf-Similar Trees</div>
       <i class="icon-circle-right"></i>
     </a>
   
