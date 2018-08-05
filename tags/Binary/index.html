@@ -6,20 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>LC 2. Add Two Numbers | Blog</title>
+  <title>Tag: Binary | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return i">
-<meta name="keywords" content="LeetCode,Medium,LinkedList">
-<meta property="og:type" content="article">
-<meta property="og:title" content="LC 2. Add Two Numbers">
-<meta property="og:url" content="http://yoursite.com/2018/08/03/LC-add-new-number/index.html">
+  <meta name="keywords" content="csharp">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog">
+<meta property="og:url" content="http://yoursite.com/tags/Binary/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return i">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-08-04T06:57:17.277Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LC 2. Add Two Numbers">
-<meta name="twitter:description" content="You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return i">
+<meta name="twitter:title" content="Blog">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -58,7 +54,7 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="../../../../index.html">Main page</a></li>
+				<li><a href="../../index.html">Main page</a></li>
 	        
 			</ul>
 		</nav>
@@ -128,7 +124,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 100%"><a href="../../../../index.html">Main page</a></li>
+					<li style="width: 100%"><a href="../../index.html">Main page</a></li>
 		        
 				</ul>
 			</nav>
@@ -143,43 +139,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-LC-add-new-number" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      LC 2. Add Two Numbers
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="../../archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="../../2018/08/05/Binary-Gap/" class="archive-article-date">
+  	<time datetime="2018-08-05T18:02:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-05</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="../../2018/08/05/Binary-Gap/">868. Binary Gap</a>
     </h1>
   
 
-        
-        <a href="" class="archive-article-date">
-  	<time datetime="2018-08-04T04:48:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
-<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
-<p>Example:</p>
-<p><pre><code>Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>Output: 7 -&gt; 0 -&gt; 8<br>Explanation: 342 + 465 = 807.</code></pre></p>
-<p><br><a id="more"></a></p>
-<p>Code:</p>
-<p>First of all, I create 2 pointers (result and temp). I use temp to preform the addition and the pointer will move to the end when the while loop is completed, then return the result.next pointer for the answer.</p>
-<p><pre><code>public class Solution {<br>    public ListNode AddTwoNumbers(ListNode l1, ListNode l2) {<br>        var result = new ListNode(0);<br>        var temp = result;<br>        int carry = 0;<br>        while(l1 != null || l2 != null || carry &gt;0)<br>        {<br>            int newValue = carry + (l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val);<br>            carry = newValue / 10;<br>            temp.next = new ListNode(newValue % 10);<br>            temp = temp.next;<br>            l1 = l1 == null ? null : l1.next;<br>            l2 = l2 == null ? null : l2.next;<br>        }<br>        return result.next;<br>    }<br>}</code></pre></p>
-<p></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -189,74 +178,29 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Medium</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Easy</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LinkedList</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Binary</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="../../04/Middle-of-the-Linked-List/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          876. Middle of the Linked List
-        
-      </div>
-    </a>
   
   
-    <a href="../../../07/29/10-questions-from-using-graphql/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">9 questions that prevent you from using GraphQL</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -278,9 +222,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
