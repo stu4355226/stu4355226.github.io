@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="Consider all the leaves of a binary tree.  From left to right order, the values of those leaves form a leaf value sequence. For example, in the given tree above, the leaf value sequence is (6, 7, 4, 9">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-08-05T03:37:14.406Z">
+<meta property="og:updated_time" content="2018-08-05T04:47:27.211Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="872. Leaf-Similar Trees">
 <meta name="twitter:description" content="Consider all the leaves of a binary tree.  From left to right order, the values of those leaves form a leaf value sequence. For example, in the given tree above, the leaf value sequence is (6, 7, 4, 9">
@@ -173,18 +173,8 @@
 <p>Code:</p>
 <p>I create 2 stacks and use DFS in using post-order traversal. In the DFS helper function it only returns the button value when left and right sub-nodes are empty, and do then the comparison.</p>
 <p>If both the values are not match, it returns false. In the end we return !any() to make sure both the stacks are empty.</p>
-<p><pre><code>public class Solution {<br>    public bool LeafSimilar(TreeNode root1, TreeNode root2) {<br>        Stack<treenode> stack1 = new Stack<treenode>();<br>        Stack<treenode> stack2 = new Stack<treenode>();<br>        stack1.Push(root1);<br>        stack2.Push(root2);<br>        while(stack1.Any() &amp;&amp; stack2.Any())<br>            if(dfs(stack1) != dfs(stack2))<br>                return false;<br>        return !stack1.Any() &amp;&amp; !stack2.Any();<br>    }</treenode></treenode></treenode></treenode></code></pre></p>
-<pre><code>private int dfs(Stack&lt;TreeNode&gt; s)
-{
-    while(true)
-    {
-        TreeNode node = s.Pop();
-        if(node.right != null) s.Push(node.right);
-        if(node.left != null) s.Push(node.left);
-        if(node.left == null &amp;&amp; node.right == null) return node.val;
-    }
-}
-</code></pre><p>}<br></p>
+<p><pre><code>public class Solution {<br>    public bool LeafSimilar(TreeNode root1, TreeNode root2) {<br>        Stack<treenode> stack1 = new Stack<treenode>();<br>        Stack<treenode> stack2 = new Stack<treenode>();<br>        stack1.Push(root1);<br>        stack2.Push(root2);<br>        while(stack1.Any() &amp;&amp; stack2.Any())<br>            if(dfs(stack1) != dfs(stack2))<br>                return false;<br>        return !stack1.Any() &amp;&amp; !stack2.Any();<br>    }<br></treenode></treenode></treenode></treenode></code></pre></p>
+<p><pre><code>private int dfs(Stack<treenode> s)<br>    {<br>        while(true)<br>        {<br>            TreeNode node = s.Pop();<br>            if(node.right != null) s.Push(node.right);<br>            if(node.left != null) s.Push(node.left);<br>            if(node.left == null &amp;&amp; node.right == null) return node.val;<br>        }<br>    }<br>}<br></treenode></code></pre></p>
 
       
 
@@ -356,19 +346,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Tree</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Easy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">LinkedList</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Medium</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Tree</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Easy</a>
               </li>
              
               <li class="article-tag-list-item">
