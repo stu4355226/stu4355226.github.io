@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>LC 2. Add Two Numbers | Blog</title>
+  <title>870. Advantage Shuffle | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return i">
-<meta name="keywords" content="LeetCode,Medium,LinkedList">
+  <meta name="description" content="Given two arrays A and B of equal size, the advantage of A with respect to B is the number of indices i for which A[i] &amp;gt; B[i]. Return any permutation of A that maximizes its advantage with respect">
+<meta name="keywords" content="LeetCode,Array,Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC 2. Add Two Numbers">
-<meta property="og:url" content="http://yoursite.com/2018/08/03/LC-add-new-number/index.html">
+<meta property="og:title" content="870. Advantage Shuffle">
+<meta property="og:url" content="http://yoursite.com/2018/08/05/Advantage-Shuffle/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return i">
+<meta property="og:description" content="Given two arrays A and B of equal size, the advantage of A with respect to B is the number of indices i for which A[i] &amp;gt; B[i]. Return any permutation of A that maximizes its advantage with respect">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-08-04T06:57:17.277Z">
+<meta property="og:updated_time" content="2018-08-05T07:53:15.340Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LC 2. Add Two Numbers">
-<meta name="twitter:description" content="You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return i">
+<meta name="twitter:title" content="870. Advantage Shuffle">
+<meta name="twitter:description" content="Given two arrays A and B of equal size, the advantage of A with respect to B is the number of indices i for which A[i] &amp;gt; B[i]. Return any permutation of A that maximizes its advantage with respect">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -143,35 +143,67 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-LC-add-new-number" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Advantage-Shuffle" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      LC 2. Add Two Numbers
+      870. Advantage Shuffle
     </h1>
   
 
         
         <a href="" class="archive-article-date">
-  	<time datetime="2018-08-04T04:48:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-03</time>
+  	<time datetime="2018-08-05T07:53:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
-<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
-<p>Example:</p>
-<p><pre><code>Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>Output: 7 -&gt; 0 -&gt; 8<br>Explanation: 342 + 465 = 807.</code></pre></p>
-<p><br><a id="more"></a></p>
-<p>Code:</p>
-<p>First of all, I create 2 pointers (result and temp). I use temp to preform the addition and the pointer will move to the end when the while loop is completed, then return the result.next pointer for the answer.</p>
-<p><pre><code>public class Solution {<br>    public ListNode AddTwoNumbers(ListNode l1, ListNode l2) {<br>        var result = new ListNode(0);<br>        var temp = result;<br>        int carry = 0;<br>        while(l1 != null || l2 != null || carry &gt;0)<br>        {<br>            int newValue = carry + (l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val);<br>            carry = newValue / 10;<br>            temp.next = new ListNode(newValue % 10);<br>            temp = temp.next;<br>            l1 = l1 == null ? null : l1.next;<br>            l2 = l2 == null ? null : l2.next;<br>        }<br>        return result.next;<br>    }<br>}</code></pre></p>
-<p></p>
+        <p>Given two arrays A and B of equal size, the advantage of A with respect to B is the number of indices i for which A[i] &gt; B[i].</p>
+<p>Return any permutation of A that maximizes its advantage with respect to B.</p>
+<p>Example 1:</p>
+<p><pre><code>Input: A = [2,7,11,15], B = [1,10,4,11]<br>Output: [2,11,7,15]<br></code></pre><br>Example 2:</p>
+<p><pre><code>Input: A = [12,24,8,32], B = [13,25,32,11]<br>Output: [24,32,8,12]<br> </code></pre></p>
+<p>Note:</p>
+<p>1 &lt;= A.length = B.length &lt;= 10000<br>0 &lt;= A[i] &lt;= 10^9<br>0 &lt;= B[i] &lt;= 10^9<br><a id="more"></a><br>Code:</p>
+<p><pre><code>public class Solution {<br>    public int[] AdvantageCount(int[] A, int[] B) {<br>        if(A.Length &lt;=1) return A;<br>        int[] sortedB = new int[B.Length];<br>        Array.Copy(B, sortedB, B.Length);<br>        Array.Sort(sortedB);<br>        Array.Sort(A);<br>        Dictionary&lt;int,List<int>&gt; dics = new Dictionary&lt;int,List<int>&gt;();<br>        int i = 0, j= 0, endA = A.Length -1, endB = B.Length -1;</int></int></code></pre></p>
+<pre><code>    while(i&lt;= endA &amp;&amp; j &lt;= endB)
+    {
+        if(A[i] &gt; sortedB[j])
+        {
+            if (dics.ContainsKey(sortedB[j]))
+                dics[sortedB[j]].Add(A[i]);
+            else
+                dics[sortedB[j]] = new List&lt;int&gt;{A[i]};
+
+            i++; j++;
+        }
+        else 
+        {
+             if (dics.ContainsKey(sortedB[endB]))
+                dics[sortedB[endB]].Add(A[i]);
+            else
+                dics[sortedB[endB]] =  new List&lt;int&gt;{A[i]};
+
+            endB--; i++;
+        }
+    }
+
+   for(int k = 0; k &lt; B.Length; k++)
+   {
+       A[k] = dics[B[k]].First();
+       dics[B[k]].Remove(A[k]);
+   }
+
+
+    return A;
+
+}
+</code></pre><p>}<br></p>
 
       
 
@@ -189,11 +221,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Medium</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Array</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LinkedList</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Medium</a>
         		</li>
       		
 		</ul>
@@ -212,18 +244,9 @@
   
 <nav id="article-nav">
   
-    <a href="../../04/Middle-of-the-Linked-List/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          876. Middle of the Linked List
-        
-      </div>
-    </a>
   
-  
-    <a href="../../../07/29/10-questions-from-using-graphql/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">9 questions that prevent you from using GraphQL</div>
+    <a href="../../04/Koko-Eating-Bananas/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">875. Koko Eating Bananas</div>
       <i class="icon-circle-right"></i>
     </a>
   
