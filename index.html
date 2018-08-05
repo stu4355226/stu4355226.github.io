@@ -254,12 +254,10 @@
 <p><pre><code>Input: [1,2,3,4,5]<br>Output: Node 3 from this list (Serialization: [3,4,5])<br>The returned node has value 3.  (The judge’s serialization of this node is [3,4,5]).<br>Note that we returned a ListNode object ans, such that:<br>ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, and ans.next.next.next = NULL.<br></code></pre><br>Example 2:</p>
 <p><pre><code>Input: [1,2,3,4,5,6]<br>Output: Node 4 from this list (Serialization: [4,5,6])<br>Since the list has two middle nodes with values 3 and 4, we return the second one.<br> </code></pre></p>
 <p>Note:</p>
-<p>The number of nodes in the given list will be between 1 and 100.</p>
-<p>code:</p>
-<p>I create 2 pointers which are ‘fast’ and ‘slow’. fast pointer goes 2 time faster then slow, so that when fast pointer reaches to the end, we can see the slow pointer is at middle of the linked list.</p>
-<p>depends on fast pointer is at the end of the list or 2 node away from the end. I return either slow.next or slow for the answer.</p>
-<p><pre><code><br>public class Solution {<br>    public ListNode MiddleNode(ListNode head) {<br>        var result =  new ListNode(0);<br>        var fast = head;<br>        var slow = head;<br>        while(fast.next != null &amp;&amp; fast.next.next != null)<br>        {<br>            fast = fast.next.next;<br>            slow = slow.next;<br>        }<br>        if(fast.next != null)<br>            result.next = slow.next;<br>        else<br>            result.next = slow;<br>        return result.next;<br>    }<br>}<br></code></pre></p>
-
+<p>The number of nodes in the given list will be between 1 and 100.<br>
+        
+          <a class="article-more-a" href="2018/08/04/Middle-of-the-Linked-List/#more">more >></a>
+        
       
 
       
