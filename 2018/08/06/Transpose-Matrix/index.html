@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/7 | Blog</title>
+  <title>867. Transpose Matrix | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="csharp">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/07/index.html">
+  <meta name="description" content="Given a matrix A, return the transpose of A. The transpose of a matrix is the matrix flipped over it’s main diagonal, switching the row and column indices of the matrix. Example 1: Input: [[1,2,3],[4,">
+<meta name="keywords" content="LeetCode,Easy,Matrix">
+<meta property="og:type" content="article">
+<meta property="og:title" content="867. Transpose Matrix">
+<meta property="og:url" content="http://yoursite.com/2018/08/06/Transpose-Matrix/index.html">
 <meta property="og:site_name" content="Blog">
+<meta property="og:description" content="Given a matrix A, return the transpose of A. The transpose of a matrix is the matrix flipped over it’s main diagonal, switching the row and column indices of the matrix. Example 1: Input: [[1,2,3],[4,">
 <meta property="og:locale" content="English">
+<meta property="og:updated_time" content="2018-08-06T19:30:19.673Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Blog">
+<meta name="twitter:title" content="867. Transpose Matrix">
+<meta name="twitter:description" content="Given a matrix A, return the transpose of A. The transpose of a matrix is the matrix flipped over it’s main diagonal, switching the row and column indices of the matrix. Example 1: Input: [[1,2,3],[4,">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -54,7 +58,7 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="../../../index.html">Main page</a></li>
+				<li><a href="../../../../index.html">Main page</a></li>
 	        
 			</ul>
 		</nav>
@@ -124,7 +128,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 100%"><a href="../../../index.html">Main page</a></li>
+					<li style="width: 100%"><a href="../../../../index.html">Main page</a></li>
 		        
 				</ul>
 			</nav>
@@ -139,98 +143,112 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Transpose-Matrix" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href=".." class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="../../../2018/07/29/10-questions-from-using-graphql/" class="archive-article-date">
-  	<time datetime="2018-07-29T23:08:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-29</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../../../2018/07/29/10-questions-from-using-graphql/">9 questions that prevent you from using GraphQL</a>
+    <h1 class="article-title" itemprop="name">
+      867. Transpose Matrix
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="" class="archive-article-date">
+  	<time datetime="2018-08-06T19:30:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Given a matrix A, return the transpose of A.</p>
+<p>The transpose of a matrix is the matrix flipped over it’s main diagonal, switching the row and column indices of the matrix.</p>
+<p>Example 1:</p>
+<p><pre><code>Input: [[1,2,3],[4,5,6],[7,8,9]]<br>Output: [[1,4,7],[2,5,8],[3,6,9]]<br></code></pre><br>Example 2:</p>
+<p><pre><code>Input: [[1,2,3],[4,5,6]]<br>Output: [[1,4],[2,5],[3,6]]<br></code></pre></p>
+<p>Note:</p>
+<p>1 &lt;= A.length &lt;= 1000<br>1 &lt;= A[0].length &lt;= 1000</p>
+<p>Code:</p>
+<p>Don’t need any trick, just create an array and insert the value.</p>
+<p><pre><code>public class Solution {<br>    public int[][] Transpose(int[][] A) {<br>        int[][] result = new int[A[0].Length][];<br>        for(int i = 0; i &lt; A.Length; i++)<br>        {<br>            for(int j = 0; j &lt; A[i].Length; j++)<br>            {<br>                if(i == 0)<br>                    result[j] = new int[A.Length];<br>                result[j][i] = A[i][j];<br>            }<br>        }<br>        return result;<br>    }<br>}<br></code></pre></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">GraphQL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="../../../2018/07/28/bash-script/" class="archive-article-date">
-  	<time datetime="2018-07-28T19:01:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../../../2018/07/28/bash-script/">bash_script</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">bash</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Easy</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Matrix</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="../../05/Binary-Gap/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">868. Binary Gap</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -252,8 +270,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
