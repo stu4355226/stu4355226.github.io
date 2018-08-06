@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="Given a matrix A, return the transpose of A. The transpose of a matrix is the matrix flipped over it’s main diagonal, switching the row and column indices of the matrix. Example 1: Input: [[1,2,3],[4,">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-08-06T19:30:19.673Z">
+<meta property="og:updated_time" content="2018-08-06T20:04:57.289Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="867. Transpose Matrix">
 <meta name="twitter:description" content="Given a matrix A, return the transpose of A. The transpose of a matrix is the matrix flipped over it’s main diagonal, switching the row and column indices of the matrix. Example 1: Input: [[1,2,3],[4,">
@@ -169,8 +169,7 @@
 <p><pre><code>Input: [[1,2,3],[4,5,6],[7,8,9]]<br>Output: [[1,4,7],[2,5,8],[3,6,9]]<br></code></pre><br>Example 2:</p>
 <p><pre><code>Input: [[1,2,3],[4,5,6]]<br>Output: [[1,4],[2,5],[3,6]]<br></code></pre></p>
 <p>Note:</p>
-<p>1 &lt;= A.length &lt;= 1000<br>1 &lt;= A[0].length &lt;= 1000</p>
-<p>Code:</p>
+<p>1 &lt;= A.length &lt;= 1000<br>1 &lt;= A[0].length &lt;= 1000<br><a id="more"></a><br>Code:</p>
 <p>Don’t need any trick, just create an array and insert the value.</p>
 <p><pre><code>public class Solution {<br>    public int[][] Transpose(int[][] A) {<br>        int[][] result = new int[A[0].Length][];<br>        for(int i = 0; i &lt; A.Length; i++)<br>        {<br>            for(int j = 0; j &lt; A[i].Length; j++)<br>            {<br>                if(i == 0)<br>                    result[j] = new int[A.Length];<br>                result[j][i] = A[i][j];<br>            }<br>        }<br>        return result;<br>    }<br>}<br></code></pre></p>
 
@@ -345,10 +344,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">GraphQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
@@ -358,6 +353,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Medium</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">GraphQL</a>
               </li>
              
               <li class="article-tag-list-item">
