@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="We are given a binary tree (with root node root), a target node, and an integer value K. Return a list of the values of all nodes that have a distance K from the target node.  The answer can be return">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-08-06T20:37:52.288Z">
+<meta property="og:updated_time" content="2018-08-06T20:39:54.025Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="863. All Nodes Distance K in Binary Tree">
 <meta name="twitter:description" content="We are given a binary tree (with root node root), a target node, and an integer value K. Return a list of the values of all nodes that have a distance K from the target node.  The answer can be return">
@@ -218,9 +218,9 @@
     }
     return ans;
 }
+&lt;/pre&gt;&lt;/code&gt;
 
-
-private IList&lt;int&gt; findAlls(TreeNode target, int dis, IList&lt;int&gt; pre)
+&lt;pre&gt;&lt;code&gt;private IList&lt;int&gt; findAlls(TreeNode target, int dis, IList&lt;int&gt; pre)
 {
     pre = findKids(target, dis, pre);
     if(nodeLogs[target.val] != null)
@@ -229,9 +229,9 @@ private IList&lt;int&gt; findAlls(TreeNode target, int dis, IList&lt;int&gt; pre
         pre = findAlls(pn, dis - 1, pre);
     }
     return pre;
-}
+}&lt;/pre&gt;&lt;/code&gt;
 
-private IList&lt;int&gt; findKids(TreeNode root, int dis, IList&lt;int&gt; pre)
+&lt;pre&gt;&lt;code&gt;private IList&lt;int&gt; findKids(TreeNode root, int dis, IList&lt;int&gt; pre)
 {
     if(root == null || visited[root.val]) return pre;
     visited[root.val] = true;
