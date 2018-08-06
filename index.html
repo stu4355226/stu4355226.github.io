@@ -141,6 +141,113 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Smallest-Subtree-with-all-the-Deepest-Nodes" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="2018/08/06/Smallest-Subtree-with-all-the-Deepest-Nodes/">865. Smallest Subtree with all the Deepest Nodes</a>
+    </h1>
+  
+
+        
+        <a href="2018/08/06/Smallest-Subtree-with-all-the-Deepest-Nodes/" class="archive-article-date">
+  	<time datetime="2018-08-06T19:55:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Given a binary tree rooted at root, the depth of each node is the shortest distance to the root.</p>
+<p>A node is deepest if it has the largest depth possible among any node in the entire tree.</p>
+<p>The subtree of a node is that node, plus the set of all descendants of that node.</p>
+<p>Return the node with the largest depth such that it contains all the deepest nodes in its subtree.</p>
+<p>Example 1:</p>
+<p><pre><code>Input: [3,5,1,6,2,0,8,null,null,7,4]<br>Output: [2,7,4]<br>Explanation:</code></pre></p>
+<p>We return the node with value 2, colored in yellow in the diagram.<br>The nodes colored in blue are the deepest nodes of the tree.<br>The input “[3, 5, 1, 6, 2, 0, 8, null, null, 7, 4]” is a serialization of the given tree.<br>The output “[2, 7, 4]” is a serialization of the subtree rooted at the node with value 2.<br>Both the input and output have TreeNode type.<br> </p>
+<p>Note:</p>
+<p>The number of nodes in the tree will be between 1 and 500.<br>The values of each node are unique.</p>
+<p>Code:</p>
+<p>I go through the node by using post-order traversal(left, right, val) and pass through the int represent the deep value.</p>
+<p>there are the conditions:<br>1, if the node is null, go back (d value - 1)<br>2, if left node is exist, go left node<br>3, if right node is exist, then go right<br>4, when left’s d value and right’s d value and left is grater or equal root node. Set current node as a answer.</p>
+<p><pre><code>public class Solution {<br>    TreeNode result;<br>    int maxD = -1;<br>    public TreeNode SubtreeWithAllDeepest(TreeNode root) {<br>        dfs(root, 0);<br>        return result;<br>    }</code></pre></p>
+<pre><code>private int dfs(TreeNode node, int d)
+{
+    if(node == null) return d-1;
+    int left = dfs(node.left, d+1);
+    int right = dfs(node.right, d+1);
+    if(left == right &amp;&amp; left &gt;=maxD)
+    {
+        result = node;
+        maxD = left;
+    }
+    return Math.Max(left, right);
+}
+</code></pre><p>}<br></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Medium</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="2018/08/06/Smallest-Subtree-with-all-the-Deepest-Nodes/">Read more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Transpose-Matrix" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -633,11 +740,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LinkedList</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LinkedList</a>
         		</li>
       		
 		</ul>
@@ -1030,19 +1137,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LinkedList</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Matrix</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LinkedList</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Tree</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Matrix</a>
               </li>
              
               <li class="article-tag-list-item">
