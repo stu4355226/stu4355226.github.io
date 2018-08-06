@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="We are given a binary tree (with root node root), a target node, and an integer value K. Return a list of the values of all nodes that have a distance K from the target node.  The answer can be return">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-08-06T20:37:07.857Z">
+<meta property="og:updated_time" content="2018-08-06T20:37:52.288Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="863. All Nodes Distance K in Binary Tree">
 <meta name="twitter:description" content="We are given a binary tree (with root node root), a target node, and an integer value K. Return a list of the values of all nodes that have a distance K from the target node.  The answer can be return">
@@ -171,8 +171,7 @@
 <p>Explanation:<br>The nodes that are a distance 2 from the target node (with value 5)<br>have values 7, 4, and 1.</p>
 <p>Note that the inputs “root” and “target” are actually TreeNodes.<br>The descriptions of the inputs above are just serializations of these objects.<br> </p>
 <p>Note:</p>
-<p>The given tree is non-empty.<br>Each node in the tree has unique values 0 &lt;= node.val &lt;= 500.<br>The target node is a node in the tree.<br>0 &lt;= K &lt;= 1000.</p>
-<p>Code:</p>
+<p>The given tree is non-empty.<br>Each node in the tree has unique values 0 &lt;= node.val &lt;= 500.<br>The target node is a node in the tree.<br>0 &lt;= K &lt;= 1000.<br><a id="more"></a><br>Code:</p>
 <p>Tree Traversal for this problem is using Pre-order traversal. Once we find an target, we need to find all the kids related to this target node and save it into a <int> pre list.</int></p>
 <p>For find kids function’s  conditions:</p>
 <ol>
