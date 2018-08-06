@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="We are given a binary tree (with root node root), a target node, and an integer value K. Return a list of the values of all nodes that have a distance K from the target node.  The answer can be return">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-08-06T21:27:46.919Z">
+<meta property="og:updated_time" content="2018-08-06T21:27:57.276Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="863. All Nodes Distance K in Binary Tree">
 <meta name="twitter:description" content="We are given a binary tree (with root node root), a target node, and an integer value K. Return a list of the values of all nodes that have a distance K from the target node.  The answer can be return">
@@ -187,38 +187,7 @@
 <li>if nodeLogs has current node history, pull out the node and check find all kids for this node.</li>
 <li>return pre list.</li>
 </ol>
-<p><pre><code>public class Solution {<br>    TreeNode[] nodeLogs;<br>    bool[] visited;</code></pre></p>
-<pre><code>public IList&lt;int&gt; DistanceK(TreeNode root, TreeNode target, int K) {
-    IList&lt;int&gt; ans = new List&lt;int&gt;();
-    nodeLogs = new TreeNode[501];
-    visited = new bool[501];
-    if(root == target) 
-        return findKids(root, K, ans);
-    Queue&lt;TreeNode&gt; queue = new Queue&lt;TreeNode&gt;();
-    queue.Enqueue(root);
-    while(queue.Any())
-    {
-        int size = queue.Count;
-        for(int i = 0; i &lt; size; i++)
-        {
-            TreeNode current = queue.Dequeue();
-            if(current == target) 
-                return findAlls(current, K, ans);
-            if(current.left != null)
-            {
-                nodeLogs[current.left.val] = current;
-                queue.Enqueue(current.left);
-            }
-            if(current.right != null)
-            {
-                nodeLogs[current.right.val] = current;
-                queue.Enqueue(current.right);
-            }
-        }
-    }
-    return ans;
-}
-</code></pre><p>private IList<int> findAlls(TreeNode target, int dis, IList<int> pre)<br>    {<br>        pre = findKids(target, dis, pre);<br>        if(nodeLogs[target.val] != null)<br>        {<br>            TreeNode pn = nodeLogs[target.val];<br>            pre = findAlls(pn, dis - 1, pre);<br>        }<br>        return pre;<br>    }<br>private IList<int> findKids(TreeNode root, int dis, IList<int> pre)<br>    {<br>        if(root == null || visited[root.val]) return pre;<br>        visited[root.val] = true;<br>        if(dis == 0)<br>        {<br>            pre.Add(root.val);<br>            return pre;<br>        }<br>        pre = findKids(root.left, dis - 1, pre);<br>        pre = findKids(root.right, dis - 1, pre);<br>        return pre;<br>    }<br>}<br></int></int></int></int></p>
+<p><pre><code>public class Solution {<br>    TreeNode[] nodeLogs;<br>    bool[] visited;<br>    public IList<int> DistanceK(TreeNode root, TreeNode target, int K) {<br>        IList<int> ans = new List<int>();<br>        nodeLogs = new TreeNode[501];<br>        visited = new bool[501];<br>        if(root == target)<br>            return findKids(root, K, ans);<br>        Queue<treenode> queue = new Queue<treenode>();<br>        queue.Enqueue(root);<br>        while(queue.Any())<br>        {<br>            int size = queue.Count;<br>            for(int i = 0; i &lt; size; i++)<br>            {<br>                TreeNode current = queue.Dequeue();<br>                if(current == target)<br>                    return findAlls(current, K, ans);<br>                if(current.left != null)<br>                {<br>                    nodeLogs[current.left.val] = current;<br>                    queue.Enqueue(current.left);<br>                }<br>                if(current.right != null)<br>                {<br>                    nodeLogs[current.right.val] = current;<br>                    queue.Enqueue(current.right);<br>                }<br>            }<br>        }<br>        return ans;<br>    }<br>private IList<int> findAlls(TreeNode target, int dis, IList<int> pre)<br>    {<br>        pre = findKids(target, dis, pre);<br>        if(nodeLogs[target.val] != null)<br>        {<br>            TreeNode pn = nodeLogs[target.val];<br>            pre = findAlls(pn, dis - 1, pre);<br>        }<br>        return pre;<br>    }<br>private IList<int> findKids(TreeNode root, int dis, IList<int> pre)<br>    {<br>        if(root == null || visited[root.val]) return pre;<br>        visited[root.val] = true;<br>        if(dis == 0)<br>        {<br>            pre.Add(root.val);<br>            return pre;<br>        }<br>        pre = findKids(root.left, dis - 1, pre);<br>        pre = findKids(root.right, dis - 1, pre);<br>        return pre;<br>    }<br>}<br></int></int></int></int></treenode></treenode></int></int></int></code></pre></p>
 
       
 
@@ -382,6 +351,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">GraphQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
@@ -391,10 +364,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Medium</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">GraphQL</a>
               </li>
              
               <li class="article-tag-list-item">
