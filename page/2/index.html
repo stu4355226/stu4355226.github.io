@@ -6,20 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>868. Binary Gap | Blog</title>
+  <title>Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Given a positive integer N, find and return the longest distance between two consecutive 1’s in the binary representation of N. If there aren’t two consecutive 1’s, return 0.">
-<meta name="keywords" content="LeetCode,Easy,Binary">
-<meta property="og:type" content="article">
-<meta property="og:title" content="868. Binary Gap">
-<meta property="og:url" content="http://yoursite.com/2018/08/05/Binary-Gap/index.html">
+  <meta name="keywords" content="csharp">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="Given a positive integer N, find and return the longest distance between two consecutive 1’s in the binary representation of N. If there aren’t two consecutive 1’s, return 0.">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-08-05T18:02:12.767Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="868. Binary Gap">
-<meta name="twitter:description" content="Given a positive integer N, find and return the longest distance between two consecutive 1’s in the binary representation of N. If there aren’t two consecutive 1’s, return 0.">
+<meta name="twitter:title" content="Blog">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -58,7 +54,7 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="../../../../index.html">Main page</a></li>
+				<li><a href="../../index.html">Main page</a></li>
 	        
 			</ul>
 		</nav>
@@ -128,7 +124,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 100%"><a href="../../../../index.html">Main page</a></li>
+					<li style="width: 100%"><a href="../../index.html">Main page</a></li>
 		        
 				</ul>
 			</nav>
@@ -143,40 +139,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Binary-Gap" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-bash-script" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      868. Binary Gap
+    <h1 itemprop="name">
+      <a class="article-title" href="../../2018/07/28/bash-script/">bash_script</a>
     </h1>
   
 
         
-        <a href="" class="archive-article-date">
-  	<time datetime="2018-08-05T18:02:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-05</time>
+        <a href="../../2018/07/28/bash-script/" class="archive-article-date">
+  	<time datetime="2018-07-28T19:01:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Given a positive integer N, find and return the longest distance between two consecutive 1’s in the binary representation of N.</p>
-<p>If there aren’t two consecutive 1’s, return 0.</p>
-<a id="more"></a>
-<p>Example 1:</p>
-<p><pre><code>Input: 22<br>Output: 2<br>Explanation:<br>22 in binary is 0b10110.<br>In the binary representation of 22, there are three ones, and two consecutive pairs of 1’s.<br>The first consecutive pair of 1’s have distance 2.<br>The second consecutive pair of 1’s have distance 1.<br>The answer is the largest of these two distances, which is 2.</code></pre><br>Example 2:</p>
-<p><pre><code>Input: 5<br>Output: 2<br>Explanation:<br>5 in binary is 0b101.</code></pre><br>Example 3:</p>
-<p><pre><code>Input: 6<br>Output: 1<br>Explanation:<br>6 in binary is 0b110.</code></pre><br>Example 4:</p>
-<p><pre><code>Input: 8<br>Output: 0<br>Explanation:<br>8 in binary is 0b1000.<br>There aren’t any consecutive pairs of 1’s in the binary representation of 8, so we return 0.</code></pre></p>
-<p>Note:</p>
-<p>1 &lt;= N &lt;= 10^9</p>
-<p>code:</p>
-<p>One pass on N in binary from right to left.<br>d means the distance from the last 1 position.<br>d is initial to a small enough value -32</p>
-<p><pre><code>public class Solution {<br>    public int BinaryGap(int N) {<br>        int res = 0;<br>        for(int d = -32; N &gt; 0; N /= 2, d++)<br>        {<br>            if(N % 2 == 1)<br>            {<br>                res = Math.Max(res, d);<br>                d = 0;<br>            }<br>        }<br>        return res;<br>    }<br>}</code></pre></p>
-
+        <h2 id="Writing-bash-script-in-mac-is-fair-easy-job-to-do-and-can-automate-a-lot-of-stuff-to-save-your-time"><a href="#Writing-bash-script-in-mac-is-fair-easy-job-to-do-and-can-automate-a-lot-of-stuff-to-save-your-time" class="headerlink" title="Writing bash script in mac is fair easy job to do, and can automate a lot of stuff to save your time."></a>Writing bash script in mac is fair easy job to do, and can automate a lot of stuff to save your time.</h2><h3 id="1-First-step-is-to-open-a-file-using-any-of-text-edits-you-have"><a href="#1-First-step-is-to-open-a-file-using-any-of-text-edits-you-have" class="headerlink" title="1. First step is to open a file using any of text edits you have"></a>1. First step is to open a file using any of text edits you have</h3><h3 id="2-Make-sure-you-add-bin-bash-in-the-head-of-the-file"><a href="#2-Make-sure-you-add-bin-bash-in-the-head-of-the-file" class="headerlink" title="2. Make sure you add #!/bin/bash in the head of the file."></a>2. Make sure you add #!/bin/bash in the head of the file.</h3>
+        
+          <a class="article-more-a" href="../../2018/07/28/bash-script/#more">more >></a>
+        
       
 
       
@@ -189,15 +177,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Easy</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Binary</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">bash</a>
         		</li>
       		
 		</ul>
@@ -206,33 +186,16 @@
       
 
       
+        <p class="article-more-link">
+          <a class="article-more-a" href="../../2018/07/28/bash-script/">Read more >></a>
+        </p>
+      
 
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="../../06/Transpose-Matrix/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          867. Transpose Matrix
-        
-      </div>
-    </a>
-  
-  
-    <a href="../Advantage-Shuffle/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">870. Advantage Shuffle</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -252,14 +215,12 @@
 
 
 
-  
-  
-  
 
   
-
   
-
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="../../">&laquo; Prev</a><a class="page-number" href="../../">1</a><span class="page-number current">2</span>
+    </nav>
   
 
 
@@ -281,8 +242,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

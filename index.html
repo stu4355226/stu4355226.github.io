@@ -141,6 +141,171 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-All-Nodes-Distance-K-in-Binary-Tree" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="2018/08/06/All-Nodes-Distance-K-in-Binary-Tree/">863. All Nodes Distance K in Binary Tree</a>
+    </h1>
+  
+
+        
+        <a href="2018/08/06/All-Nodes-Distance-K-in-Binary-Tree/" class="archive-article-date">
+  	<time datetime="2018-08-06T20:37:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>We are given a binary tree (with root node root), a target node, and an integer value K.</p>
+<p>Return a list of the values of all nodes that have a distance K from the target node.  The answer can be returned in any order.</p>
+<p>Example 1:</p>
+<p><pre><code>Input: root = [3,5,1,6,2,0,8,null,null,7,4], target = 5, K = 2</code></pre></p>
+<p>Output: [7,4,1]</p>
+<p>Explanation:<br>The nodes that are a distance 2 from the target node (with value 5)<br>have values 7, 4, and 1.</p>
+<p>Note that the inputs “root” and “target” are actually TreeNodes.<br>The descriptions of the inputs above are just serializations of these objects.<br> </p>
+<p>Note:</p>
+<p>The given tree is non-empty.<br>Each node in the tree has unique values 0 &lt;= node.val &lt;= 500.<br>The target node is a node in the tree.<br>0 &lt;= K &lt;= 1000.</p>
+<p>Code:</p>
+<p>Tree Traversal for this problem is using Pre-order traversal. Once we find an target, we need to find all the kids related to this target node and save it into a <int> pre list.</int></p>
+<p>For find kids function’s  conditions:</p>
+<ol>
+<li>if the node is empty or if the node is visited, return pre list.</li>
+<li>if the node hasn’t visited, set the visited[val] to true.</li>
+<li>if the node has left sub-node, go check it and return updated pre.</li>
+<li>if the node has right sub-node, go check it and return udpated pre.</li>
+<li>once all of them are done, return pre.</li>
+</ol>
+<p>For find alls finction’s condition:</p>
+<ol>
+<li>find target node itself and return target node.</li>
+<li>if nodeLogs has current node history, pull out the node and check find all kids for this node.</li>
+<li>return pre list.</li>
+</ol>
+<p><pre><code>public class Solution {<br>    TreeNode[] nodeLogs;<br>    bool[] visited;</code></pre></p>
+<pre><code>public IList&lt;int&gt; DistanceK(TreeNode root, TreeNode target, int K) {
+    IList&lt;int&gt; ans = new List&lt;int&gt;();
+    nodeLogs = new TreeNode[501];
+    visited = new bool[501];
+    if(root == target) 
+        return findKids(root, K, ans);
+    Queue&lt;TreeNode&gt; queue = new Queue&lt;TreeNode&gt;();
+    queue.Enqueue(root);
+    while(queue.Any())
+    {
+        int size = queue.Count;
+        for(int i = 0; i &lt; size; i++)
+        {
+            TreeNode current = queue.Dequeue();
+            if(current == target) 
+                return findAlls(current, K, ans);
+            if(current.left != null)
+            {
+                nodeLogs[current.left.val] = current;
+                queue.Enqueue(current.left);
+            }
+            if(current.right != null)
+            {
+                nodeLogs[current.right.val] = current;
+                queue.Enqueue(current.right);
+            }
+        }
+    }
+    return ans;
+}
+
+
+private IList&lt;int&gt; findAlls(TreeNode target, int dis, IList&lt;int&gt; pre)
+{
+    pre = findKids(target, dis, pre);
+    if(nodeLogs[target.val] != null)
+    {
+        TreeNode pn = nodeLogs[target.val];
+        pre = findAlls(pn, dis - 1, pre);
+    }
+    return pre;
+}
+
+private IList&lt;int&gt; findKids(TreeNode root, int dis, IList&lt;int&gt; pre)
+{
+    if(root == null || visited[root.val]) return pre;
+    visited[root.val] = true;
+    if(dis == 0)
+    {
+        pre.Add(root.val);
+        return pre;
+    }
+
+    pre = findKids(root.left, dis - 1, pre);
+    pre = findKids(root.right, dis - 1, pre);
+    return pre;
+}
+</code></pre><p>}</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Medium</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="2018/08/06/All-Nodes-Distance-K-in-Binary-Tree/">Read more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Smallest-Subtree-with-all-the-Deepest-Nodes" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -634,11 +799,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Easy</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Easy</a>
         		</li>
       		
 		</ul>
@@ -933,82 +1098,10 @@
 
 
   
-    <article id="post-bash-script" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="2018/07/28/bash-script/">bash_script</a>
-    </h1>
-  
-
-        
-        <a href="2018/07/28/bash-script/" class="archive-article-date">
-  	<time datetime="2018-07-28T19:01:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Writing-bash-script-in-mac-is-fair-easy-job-to-do-and-can-automate-a-lot-of-stuff-to-save-your-time"><a href="#Writing-bash-script-in-mac-is-fair-easy-job-to-do-and-can-automate-a-lot-of-stuff-to-save-your-time" class="headerlink" title="Writing bash script in mac is fair easy job to do, and can automate a lot of stuff to save your time."></a>Writing bash script in mac is fair easy job to do, and can automate a lot of stuff to save your time.</h2><h3 id="1-First-step-is-to-open-a-file-using-any-of-text-edits-you-have"><a href="#1-First-step-is-to-open-a-file-using-any-of-text-edits-you-have" class="headerlink" title="1. First step is to open a file using any of text edits you have"></a>1. First step is to open a file using any of text edits you have</h3><h3 id="2-Make-sure-you-add-bin-bash-in-the-head-of-the-file"><a href="#2-Make-sure-you-add-bin-bash-in-the-head-of-the-file" class="headerlink" title="2. Make sure you add #!/bin/bash in the head of the file."></a>2. Make sure you add #!/bin/bash in the head of the file.</h3>
-        
-          <a class="article-more-a" href="2018/07/28/bash-script/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">bash</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2018/07/28/bash-script/">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><a class="extend next" rel="next" href="page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -1097,6 +1190,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">GraphQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
@@ -1109,7 +1206,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">GraphQL</a>
+                <a href="javascript:void(0)" class="js-tag color5">Tree</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1126,10 +1223,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">LinkedList</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Tree</a>
               </li>
              
               <li class="article-tag-list-item">

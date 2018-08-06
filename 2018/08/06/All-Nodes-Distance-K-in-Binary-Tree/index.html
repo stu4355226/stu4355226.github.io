@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>868. Binary Gap | Blog</title>
+  <title>863. All Nodes Distance K in Binary Tree | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Given a positive integer N, find and return the longest distance between two consecutive 1’s in the binary representation of N. If there aren’t two consecutive 1’s, return 0.">
-<meta name="keywords" content="LeetCode,Easy,Binary">
+  <meta name="description" content="We are given a binary tree (with root node root), a target node, and an integer value K. Return a list of the values of all nodes that have a distance K from the target node.  The answer can be return">
+<meta name="keywords" content="LeetCode,Medium,Tree">
 <meta property="og:type" content="article">
-<meta property="og:title" content="868. Binary Gap">
-<meta property="og:url" content="http://yoursite.com/2018/08/05/Binary-Gap/index.html">
+<meta property="og:title" content="863. All Nodes Distance K in Binary Tree">
+<meta property="og:url" content="http://yoursite.com/2018/08/06/All-Nodes-Distance-K-in-Binary-Tree/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="Given a positive integer N, find and return the longest distance between two consecutive 1’s in the binary representation of N. If there aren’t two consecutive 1’s, return 0.">
+<meta property="og:description" content="We are given a binary tree (with root node root), a target node, and an integer value K. Return a list of the values of all nodes that have a distance K from the target node.  The answer can be return">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-08-05T18:02:12.767Z">
+<meta property="og:updated_time" content="2018-08-06T20:37:07.857Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="868. Binary Gap">
-<meta name="twitter:description" content="Given a positive integer N, find and return the longest distance between two consecutive 1’s in the binary representation of N. If there aren’t two consecutive 1’s, return 0.">
+<meta name="twitter:title" content="863. All Nodes Distance K in Binary Tree">
+<meta name="twitter:description" content="We are given a binary tree (with root node root), a target node, and an integer value K. Return a list of the values of all nodes that have a distance K from the target node.  The answer can be return">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -143,39 +143,110 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Binary-Gap" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-All-Nodes-Distance-K-in-Binary-Tree" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      868. Binary Gap
+      863. All Nodes Distance K in Binary Tree
     </h1>
   
 
         
         <a href="" class="archive-article-date">
-  	<time datetime="2018-08-05T18:02:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-05</time>
+  	<time datetime="2018-08-06T20:37:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Given a positive integer N, find and return the longest distance between two consecutive 1’s in the binary representation of N.</p>
-<p>If there aren’t two consecutive 1’s, return 0.</p>
-<a id="more"></a>
+        <p>We are given a binary tree (with root node root), a target node, and an integer value K.</p>
+<p>Return a list of the values of all nodes that have a distance K from the target node.  The answer can be returned in any order.</p>
 <p>Example 1:</p>
-<p><pre><code>Input: 22<br>Output: 2<br>Explanation:<br>22 in binary is 0b10110.<br>In the binary representation of 22, there are three ones, and two consecutive pairs of 1’s.<br>The first consecutive pair of 1’s have distance 2.<br>The second consecutive pair of 1’s have distance 1.<br>The answer is the largest of these two distances, which is 2.</code></pre><br>Example 2:</p>
-<p><pre><code>Input: 5<br>Output: 2<br>Explanation:<br>5 in binary is 0b101.</code></pre><br>Example 3:</p>
-<p><pre><code>Input: 6<br>Output: 1<br>Explanation:<br>6 in binary is 0b110.</code></pre><br>Example 4:</p>
-<p><pre><code>Input: 8<br>Output: 0<br>Explanation:<br>8 in binary is 0b1000.<br>There aren’t any consecutive pairs of 1’s in the binary representation of 8, so we return 0.</code></pre></p>
+<p><pre><code>Input: root = [3,5,1,6,2,0,8,null,null,7,4], target = 5, K = 2</code></pre></p>
+<p>Output: [7,4,1]</p>
+<p>Explanation:<br>The nodes that are a distance 2 from the target node (with value 5)<br>have values 7, 4, and 1.</p>
+<p>Note that the inputs “root” and “target” are actually TreeNodes.<br>The descriptions of the inputs above are just serializations of these objects.<br> </p>
 <p>Note:</p>
-<p>1 &lt;= N &lt;= 10^9</p>
-<p>code:</p>
-<p>One pass on N in binary from right to left.<br>d means the distance from the last 1 position.<br>d is initial to a small enough value -32</p>
-<p><pre><code>public class Solution {<br>    public int BinaryGap(int N) {<br>        int res = 0;<br>        for(int d = -32; N &gt; 0; N /= 2, d++)<br>        {<br>            if(N % 2 == 1)<br>            {<br>                res = Math.Max(res, d);<br>                d = 0;<br>            }<br>        }<br>        return res;<br>    }<br>}</code></pre></p>
+<p>The given tree is non-empty.<br>Each node in the tree has unique values 0 &lt;= node.val &lt;= 500.<br>The target node is a node in the tree.<br>0 &lt;= K &lt;= 1000.</p>
+<p>Code:</p>
+<p>Tree Traversal for this problem is using Pre-order traversal. Once we find an target, we need to find all the kids related to this target node and save it into a <int> pre list.</int></p>
+<p>For find kids function’s  conditions:</p>
+<ol>
+<li>if the node is empty or if the node is visited, return pre list.</li>
+<li>if the node hasn’t visited, set the visited[val] to true.</li>
+<li>if the node has left sub-node, go check it and return updated pre.</li>
+<li>if the node has right sub-node, go check it and return udpated pre.</li>
+<li>once all of them are done, return pre.</li>
+</ol>
+<p>For find alls finction’s condition:</p>
+<ol>
+<li>find target node itself and return target node.</li>
+<li>if nodeLogs has current node history, pull out the node and check find all kids for this node.</li>
+<li>return pre list.</li>
+</ol>
+<p><pre><code>public class Solution {<br>    TreeNode[] nodeLogs;<br>    bool[] visited;</code></pre></p>
+<pre><code>public IList&lt;int&gt; DistanceK(TreeNode root, TreeNode target, int K) {
+    IList&lt;int&gt; ans = new List&lt;int&gt;();
+    nodeLogs = new TreeNode[501];
+    visited = new bool[501];
+    if(root == target) 
+        return findKids(root, K, ans);
+    Queue&lt;TreeNode&gt; queue = new Queue&lt;TreeNode&gt;();
+    queue.Enqueue(root);
+    while(queue.Any())
+    {
+        int size = queue.Count;
+        for(int i = 0; i &lt; size; i++)
+        {
+            TreeNode current = queue.Dequeue();
+            if(current == target) 
+                return findAlls(current, K, ans);
+            if(current.left != null)
+            {
+                nodeLogs[current.left.val] = current;
+                queue.Enqueue(current.left);
+            }
+            if(current.right != null)
+            {
+                nodeLogs[current.right.val] = current;
+                queue.Enqueue(current.right);
+            }
+        }
+    }
+    return ans;
+}
+
+
+private IList&lt;int&gt; findAlls(TreeNode target, int dis, IList&lt;int&gt; pre)
+{
+    pre = findKids(target, dis, pre);
+    if(nodeLogs[target.val] != null)
+    {
+        TreeNode pn = nodeLogs[target.val];
+        pre = findAlls(pn, dis - 1, pre);
+    }
+    return pre;
+}
+
+private IList&lt;int&gt; findKids(TreeNode root, int dis, IList&lt;int&gt; pre)
+{
+    if(root == null || visited[root.val]) return pre;
+    visited[root.val] = true;
+    if(dis == 0)
+    {
+        pre.Add(root.val);
+        return pre;
+    }
+
+    pre = findKids(root.left, dis - 1, pre);
+    pre = findKids(root.right, dis - 1, pre);
+    return pre;
+}
+</code></pre><p>}</p>
 
       
 
@@ -193,11 +264,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Easy</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Medium</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Binary</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
         		</li>
       		
 		</ul>
@@ -216,18 +287,9 @@
   
 <nav id="article-nav">
   
-    <a href="../../06/Transpose-Matrix/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          867. Transpose Matrix
-        
-      </div>
-    </a>
   
-  
-    <a href="../Advantage-Shuffle/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">870. Advantage Shuffle</div>
+    <a href="../Smallest-Subtree-with-all-the-Deepest-Nodes/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">865. Smallest Subtree with all the Deepest Nodes</div>
       <i class="icon-circle-right"></i>
     </a>
   
