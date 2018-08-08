@@ -6,24 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>9 questions that prevent you from using GraphQL | Blog</title>
+  <title>859. Buddy Strings | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. What is GraphQL?In terms of official definition, GraphQL is a query language for the API. GraphQL only defines how the query language syntax, how specific statements are executed, and so on. Just l">
-<meta name="keywords" content="GraphQL">
+  <meta name="description" content="Given two strings A and B of lowercase letters, return true if and only if we can swap two letters in A so that the result equals B. Example 1: Input: A = “ab”, B = “ba”Output: trueExample 2: Input: A">
+<meta name="keywords" content="LeetCOde,String,Easy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="9 questions that prevent you from using GraphQL">
-<meta property="og:url" content="http://yoursite.com/2018/07/29/10-questions-from-using-graphql/index.html">
+<meta property="og:title" content="859. Buddy Strings">
+<meta property="og:url" content="http://yoursite.com/2018/08/07/Buddy-Strings/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="1. What is GraphQL?In terms of official definition, GraphQL is a query language for the API. GraphQL only defines how the query language syntax, how specific statements are executed, and so on. Just l">
+<meta property="og:description" content="Given two strings A and B of lowercase letters, return true if and only if we can swap two letters in A so that the result equals B. Example 1: Input: A = “ab”, B = “ba”Output: trueExample 2: Input: A">
 <meta property="og:locale" content="English">
-<meta property="og:image" content="http://yoursite.com/images/backend-arch.png">
-<meta property="og:image" content="http://yoursite.com/images/graphql-uml.jpg">
-<meta property="og:image" content="http://yoursite.com/images/graphiql-screenshot.jpeg">
-<meta property="og:updated_time" content="2018-07-30T05:29:59.908Z">
+<meta property="og:updated_time" content="2018-08-08T05:09:41.155Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="9 questions that prevent you from using GraphQL">
-<meta name="twitter:description" content="1. What is GraphQL?In terms of official definition, GraphQL is a query language for the API. GraphQL only defines how the query language syntax, how specific statements are executed, and so on. Just l">
-<meta name="twitter:image" content="http://yoursite.com/images/backend-arch.png">
+<meta name="twitter:title" content="859. Buddy Strings">
+<meta name="twitter:description" content="Given two strings A and B of lowercase letters, return true if and only if we can swap two letters in A so that the result equals B. Example 1: Input: A = “ab”, B = “ba”Output: trueExample 2: Input: A">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -147,173 +143,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-10-questions-from-using-graphql" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Buddy-Strings" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      9 questions that prevent you from using GraphQL
+      859. Buddy Strings
     </h1>
   
 
         
         <a href="" class="archive-article-date">
-  	<time datetime="2018-07-29T23:08:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-29</time>
+  	<time datetime="2018-08-08T05:09:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-What-is-GraphQL"><a href="#1-What-is-GraphQL" class="headerlink" title="1. What is GraphQL?"></a>1. What is GraphQL?</h3><p>In terms of official definition, GraphQL is a query language for the API. GraphQL only defines how the query language syntax, how specific statements are executed, and so on. Just like the relationship between EcmaScript and JavaScript, it is possible to discover that the features described in the GraphQL standard have not yet been implemented; or that the implementation of GraphQL extends what the GraphQL standard defines.</p>
-<p>Most of them follow the GraphQL standard, but they may be slightly different, and all of this requires you to explore.<br><a id="more"></a></p>
-<h3 id="2-How-to-get-started-with-GraphQL"><a href="#2-How-to-get-started-with-GraphQL" class="headerlink" title="2. How to get started with GraphQL ?"></a>2. How to get started with GraphQL ?</h3><ul>
-<li>Have a look at the <strong>standard first</strong>: <a href="http://graphql.org/" target="_blank" rel="noopener">http://graphql.org/</a> (pure GraphQL, nothing to do with any JavaScript, Python)</li>
-<li>Look at the <strong>server-side implementation</strong>: find the implementation related to language or framework you use at <a href="http://graphql.org/code/" target="_blank" rel="noopener">http://graphql.org/code/</a></li>
-<li>Look at the <strong>client implementation</strong>: Relay or appollo-client, etc.</li>
-<li>Learn to use <strong>DataLoader</strong> to get list data.</li>
-</ul>
-<h3 id="3-What-is-the-difference-between-GraphQL-and-RESTful"><a href="#3-What-is-the-difference-between-GraphQL-and-RESTful" class="headerlink" title="3. What is the difference between GraphQL and RESTful?"></a>3. What is the difference between GraphQL and RESTful?</h3><p>First of all, let’s talk about a picture below. Both REST and GraphQL are external service interfaces of the system that hosted by the server, so that those two APIs can be co-exist, and even they share the same business logic such as Authorization…etc.</p>
-<p><img src="/images/backend-arch.png" alt="backend-arch"></p>
-<p>So what is the difference between using GraphQL and RESTful? It is mainly two points.</p>
-<h4 id="Entry-point"><a href="#Entry-point" class="headerlink" title="* Entry point"></a>* Entry point</h4><p>The main idea of ​​RESTful is resources, and a RESTful interface only operates on a single resource; therefore, when you use RESTful, you design <strong>a large number of interfaces.</strong> GraphQL is a single entry, generally configured in [host]/graphql/, and <strong>all resources are retrieved or modified from the entry via the graphql statement</strong> (of course GraphQL also supports multiple entries, but obviously the number of multiple entries is much smaller than RESTful).</p>
-<h4 id="Data-relevance"><a href="#Data-relevance" class="headerlink" title="* Data relevance"></a>* Data relevance</h4><p>The resources that RESTful operates on are relatively discrete; GraphQL’s data is more holistic.</p>
-<p>For example, if you want to get a friend of A’s friend, what should you do with RESTful?</p>
-<p>Suppose we have such an interface like this:</p>
-<pre><code>
-GET /user/:userId/friends/
-</code></pre>
-
-<p>And A has 20 good friends, then we need to send 20 + 1 = 21 REST requests in total.</p>
-<p>Or we designed the following interfaces for this particular scenario:</p>
-<pre><code>
-GET /user/:userId/friendsAndHisFriends/
-</code></pre>
-
-<p>ok…… Although it looks awkward, it only takes one request!</p>
-<p>So what about GraphQL?</p>
-<p>First we need to <strong>define a Schema</strong> for User (GraphQL has a complete type system):</p>
-<pre><code>
-Type User {
-  Id: ID!
-  Name: String!
-  Friends: [User]
-}
-</code></pre>
-
-<p>Suppose we only have one Node on the Graph root, called user:</p>
-<pre><code>
-Type Query {
-  User(id: ID!): User
-}
-</code></pre>
-
-<p>Then the query we send from the client can be written like this:</p>
-<pre><code>
-Query ($userId: ID) {
-  User(id: $userId) {
-    Name
-    Friends {
-      Name
-      Friends {
-        Name
-      }
-    }
-  }
-}
-</code></pre>
-
-<p>In the end, this request finally will be able to find out the friend’s friends in this god damn requirement!! You might have discovered the this question: Can this query be written in an infinite loop? yep, you can do it! It is described on the official website of GraphQL:</p>
-<pre><code>
-It’s Graphs All the Way Down *
-</code></pre>
-
-<p>It is like a tree that extends infinitely downward. So in my opinion, GraphQL should be called TreeQL. Of course in graph theory, Tree is Graph and it is not a problem. It should be noted that this will also lead to the topic of <strong>“N + 1 problem”</strong> - naive’s GraphQL server implementation will make this query extremely slow!</p>
-<h3 id="4-Can-GraphQL-modify-data"><a href="#4-Can-GraphQL-modify-data" class="headerlink" title="4. Can GraphQL modify data?"></a>4. Can GraphQL modify data?</h3><p>The answer is: Yes.</p>
-<p>Looking at the above examples, you must be curious, graphQL seems to be a language that exists only for search queries, is there a way to modify data?</p>
-<p>Just to make the GraphQL data platform more complete, the GraphQL standard includes an operator called <strong>mutation</strong>. Because I think this design is quite general, here is the offical link you can check out: <a href="http://graphql.org/learn/queries/#mutations" target="_blank" rel="noopener">http://graphql.org/learn/queries/#mutations</a></p>
-<h3 id="5-What-are-the-advantages-of-GraphQL-compared-to-RESTful"><a href="#5-What-are-the-advantages-of-GraphQL-compared-to-RESTful" class="headerlink" title="5. What are the advantages of GraphQL compared to RESTful?"></a>5. What are the advantages of GraphQL compared to RESTful?</h3><ul>
-<li><p>Data is more relevant and structured<br>This has been described in the third question in this article.</p>
-</li>
-<li><p>Easier to cache data in the front end<br>This is generally done for you like Relay and apollo-client. If you want to understand its caching principle, please move to GraphQL Caching.</p>
-</li>
-<li><p>Version-less API<br>Compared to the version number added by RESTful to be compatible with new and old clients, in GraphQL, if you need the server to provide different behavior than before, just modify the definition of root Query and add the Node you want above. Just fine.</p>
-</li>
-<li><p>More robust interface<br>There is no need to bury an unstable time bomb for your system because of the lack of communications to modify the interface. <strong>All front-end interfaces have strong types of Schema guarantees, and the full type definition is completely visible to the front end because of introspection.</strong> Once the query sent by the front end does not match the Schema, it can quickly detect that an error has occurred.</p>
-</li>
-<li><p>Expectant subscription<br>How to accept the <strong>push information of the server in the browser is a common problem.</strong> From the initial polling to the later WebSocket. Today, GraphQL also plans to introduce a third operator, <strong>subscription</strong>, in addition to query, mutation, in order to directly accept server push data. At the end of 2015, GraphQL officially published a blog post: Subscriptions in GraphQL and Relay to introduce subscription in their iOS and Android apps. Unfortunately, the related code is still not open source. Currently, the solution that the open source community can find is only the graphql-subscriptions written by the Apollo community for Node.js.</p>
-</li>
-</ul>
-<h3 id="6-What-are-the-disadvantages-of-using-GraphQL"><a href="#6-What-are-the-disadvantages-of-using-GraphQL" class="headerlink" title="6. What are the disadvantages of using GraphQL?"></a>6. What are the disadvantages of using GraphQL?</h3><p>Speaking of the many advantages of GraphQL, is there any drawback? Of course, there it is.</p>
-<h4 id="6-1-N-1-problem"><a href="#6-1-N-1-problem" class="headerlink" title="6.1. N+1 problem"></a>6.1. N+1 problem</h4><p>The biggest problem is that when you implement your GraphQL server interface, it is easy to write very inefficient code which is called “N+1 problem.”</p>
-<p>What is the N+1 issue? First let’s take a simple example:</p>
-<pre><code>
-Def get:
-    Users = User.objects.all()
-    For user in users:
-        Print(user.score)
-</code></pre>
-
-<p>This is a simple python code that uses Django’s QuerySet to fetch data from the database. Suppose we have two tables in our database. The relationship between User and UserScore is as follows:</p>
-<p><img src="/images/graphql-uml.jpg" alt="graphql-uml"></p>
-<p>Since the <strong>user’s score</strong> is not saved in the <strong>User table</strong>, and because the QuerySet has lazy loading feature, in the for loop, every time you get the user.score you will end up querying your database for the score data every single time in the loop. Ideally it should be an one time query job and now it becomes a N+1 queries.</p>
-<p>Relative to RESTful, it is easier to cause N+1 problems in GraphQL. Mainly due to the layer-by-layer parsing of GraphQL query, see how GraphQL executes queries on <a href="https://graphql.org/learn/execution/" title="GraphqlExecution" target="_blank" rel="noopener">GraphqlExecution</a> for more details.</p>
-<h4 id="6-2-How-to-solve-the-N-1-problem-in-GraphQL"><a href="#6-2-How-to-solve-the-N-1-problem-in-GraphQL" class="headerlink" title="6.2. How to solve the N + 1 problem in GraphQL?"></a>6.2. How to solve the N + 1 problem in GraphQL?</h4><p>The following solutions are only for relational databases. If you are using NoSQL in your project, there may be a big difference for your solution.</p>
-<ul>
-<li><p>For a <strong>one-to-one relationship</strong> (such as the relationship between User and UserScore mentioned in the example above), when you fetch data from the database, join the required data into a table. Don’t wait for the ORM framework to lazily load the data you need.</p>
-</li>
-<li><p>For a <strong>many-to-one or many-to-many relationship</strong>, you’ll need a tool library called <strong>DataLoader</strong>. Among them, Facebook provides their implementation of DataLoader for the Node.js. The main function of DataLoader is batching &amp; caching, which can merge multiple database query requests into one, and the loaded data can be directly obtained from the DataLoader’s cache space.</p>
-</li>
-</ul>
-<h3 id="7-Is-there-any-way-to-happily-debug-the-GraphQL-interface"><a href="#7-Is-there-any-way-to-happily-debug-the-GraphQL-interface" class="headerlink" title="7. Is there any way to happily debug the GraphQL interface?"></a>7. Is there any way to happily debug the GraphQL interface?</h3><p>GraphiQL / <a href="https://graphql.org/swapi-graphql/" title="DEMO" target="_blank" rel="noopener">DEMO</a></p>
-<p>Using GraphiQL makes it easy to feel the joy of “code as a document.”</p>
-<p><img src="/images/graphiql-screenshot.jpeg" alt="graphql-uml"></p>
-<h3 id="8-How-is-paging-handled-in-GraphQL"><a href="#8-How-is-paging-handled-in-GraphQL" class="headerlink" title="8. How is paging handled in GraphQL?"></a>8. How is paging handled in GraphQL?</h3><p>This is a question that may be of concern to GraphQL beginners, and a question that can be found in the official documentation.</p>
-<p>Taking a friend as an example, borrowing the filtering methods commonly used in SQL queries, the paging interface can be designed as:</p>
-<pre><code>
-Query ($userId: ID) {
-  User(id: $userId) {
-    Name
-    Friends(first: 2, offset: 3) {
-      Name
-    }
-  }
-}
-</code></pre>
-
-<p>The above example means taking the first 2 friends from the 4th friend of $userId.</p>
-<p>Similarly, the paging interface can also be designed to</p>
-<ul>
-<li>Friends(first: 2, after: $friendId);</li>
-<li>Friends(first: 2, after: $friendCursor)</li>
-</ul>
-<p>Regardless of how the paging interface is designed, it needs to be packaged and supported together. Among them, the Relay-style paging interface has basically completed the implementation in the GraphQL framework of the front and back.</p>
-<h4 id="8-1-Relay-style-paging-interface"><a href="#8-1-Relay-style-paging-interface" class="headerlink" title="8.1 Relay-style paging interface"></a>8.1 Relay-style paging interface</h4><p>Note: apollo-client is compatible with this paging interface</p>
-<pre><code>
-
-Query {
-  User {
-    Name
-    Friends(first: 2, after: $cursor) {
-      Edge {
-        Curtain
-        Node {
-          Id
-          Name
-        }
-      }
-      pageInfo {
-        hasNextPage
-      }
-    }
-  }
-}
-</code></pre>
-
-<h3 id="9-How-does-user-verification-work-in-GraphQL"><a href="#9-How-does-user-verification-work-in-GraphQL" class="headerlink" title="9.  How does user verification work in GraphQL?"></a>9.  How does user verification work in GraphQL?</h3><p>You can look back. 3. What is the difference between GraphQL and RESTful? The answer is in the picture: Authentication is a business logic layer, you shouldn’t let GraphQL handle too much work.</p>
-<p>Further reading: GraphQL <a href="https://graphql.org/learn/authorization/" title="Authentication" target="_blank" rel="noopener">Authentication</a></p>
+        <p>Given two strings A and B of lowercase letters, return true if and only if we can swap two letters in A so that the result equals B.</p>
+<p>Example 1:</p>
+<p><pre><code>Input: A = “ab”, B = “ba”<br>Output: true<br></code></pre><br>Example 2:</p>
+<p><pre><code>Input: A = “ab”, B = “ab”<br>Output: false<br></code></pre><br>Example 3:</p>
+<p><pre><code>Input: A = “aa”, B = “aa”<br>Output: true<br></code></pre><br>Example 4:</p>
+<p><pre><code>Input: A = “aaaaaaabc”, B = “aaaaaaacb”<br>Output: true<br></code></pre><br>Example 5:</p>
+<p><pre><code>Input: A = “”, B = “aa”<br>Output: false<br> </code></pre></p>
+<p>Note:</p>
+<p>0 &lt;= A.length &lt;= 20000<br>0 &lt;= B.length &lt;= 20000<br>A and B consist only of lowercase letters.</p>
+<p>Code:</p>
+<p>If A.length() != B.length(): no possible swap</p>
+<p>If A == B, we need swap two same characters. Check is duplicated char in A.</p>
+<p>In other cases, we find index for A[i] != B[i]. There should be only 2 diffs and it’s our one swap.</p>
+<p><pre><code>public class Solution {<br>    public bool BuddyStrings(string A, string B) {<br>        if (A.Length != B.Length) return false;<br>        if (A.Equals(B)) {<br>            HashSet<char> s = new HashSet<char>();<br>            foreach(var c in A) s.Add(c);<br>            return s.Count &lt; A.Length;<br>        }<br>        List<int> dif = new List<int>();<br>        for (int i = 0; i &lt; A.Length; ++i)<br>            if (A[i] != B[i])<br>                dif.Add(i);<br>        return dif.Count == 2 &amp;&amp; A[dif[0]] == B[dif[1]] &amp;&amp; A[dif[1]] == B[dif[0]];<br>    }<br>}<br></int></int></char></char></code></pre></p>
 
       
 
@@ -327,7 +190,15 @@ Query {
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">GraphQL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCOde</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">String</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Easy</a>
         		</li>
       		
 		</ul>
@@ -346,18 +217,9 @@ Query {
   
 <nav id="article-nav">
   
-    <a href="../../../08/03/LC-add-new-number/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          LC 2. Add Two Numbers
-        
-      </div>
-    </a>
   
-  
-    <a href="../../28/bash-script/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">bash_script</div>
+    <a href="../Lemonade-Change/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">860. Lemonade Change</div>
       <i class="icon-circle-right"></i>
     </a>
   
