@@ -161,21 +161,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Given two strings A and B of lowercase letters, return true if and only if we can swap two letters in A so that the result equals B.</p>
-<p>Example 1:</p>
-<p><pre><code>Input: A = “ab”, B = “ba”<br>Output: true<br></code></pre><br>Example 2:</p>
-<p><pre><code>Input: A = “ab”, B = “ab”<br>Output: false<br></code></pre><br>Example 3:</p>
-<p><pre><code>Input: A = “aa”, B = “aa”<br>Output: true<br></code></pre><br>Example 4:</p>
-<p><pre><code>Input: A = “aaaaaaabc”, B = “aaaaaaacb”<br>Output: true<br></code></pre><br>Example 5:</p>
-<p><pre><code>Input: A = “”, B = “aa”<br>Output: false<br> </code></pre></p>
-<p>Note:</p>
-<p>0 &lt;= A.length &lt;= 20000<br>0 &lt;= B.length &lt;= 20000<br>A and B consist only of lowercase letters.</p>
-<p>Code:</p>
-<p>If A.length() != B.length(): no possible swap</p>
-<p>If A == B, we need swap two same characters. Check is duplicated char in A.</p>
-<p>In other cases, we find index for A[i] != B[i]. There should be only 2 diffs and it’s our one swap.</p>
-<p><pre><code>public class Solution {<br>    public bool BuddyStrings(string A, string B) {<br>        if (A.Length != B.Length) return false;<br>        if (A.Equals(B)) {<br>            HashSet<char> s = new HashSet<char>();<br>            foreach(var c in A) s.Add(c);<br>            return s.Count &lt; A.Length;<br>        }<br>        List<int> dif = new List<int>();<br>        for (int i = 0; i &lt; A.Length; ++i)<br>            if (A[i] != B[i])<br>                dif.Add(i);<br>        return dif.Count == 2 &amp;&amp; A[dif[0]] == B[dif[1]] &amp;&amp; A[dif[1]] == B[dif[0]];<br>    }<br>}<br></int></int></char></char></code></pre></p>
-
+        <p>Given two strings A and B of lowercase letters, return true if and only if we can swap two letters in A so that the result equals B.<br>
+        
+          <a class="article-more-a" href="2018/08/07/Buddy-Strings/#more">more >></a>
+        
       
 
       
@@ -188,15 +177,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Easy</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCOde</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">String</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Easy</a>
         		</li>
       		
 		</ul>
@@ -1000,11 +989,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Easy</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Easy</a>
         		</li>
       		
 		</ul>
@@ -1136,6 +1125,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">GraphQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
@@ -1148,6 +1141,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Tree</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Easy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Binary</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCOde</a>
               </li>
              
@@ -1156,23 +1161,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Easy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">GraphQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Binary</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Tree</a>
               </li>
              
               <li class="article-tag-list-item">
