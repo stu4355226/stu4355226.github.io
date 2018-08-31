@@ -6,20 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>876. Middle of the Linked List | Blog</title>
+  <title>Tag: DP | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Given a non-empty, singly linked list with head node head, return a middle node of linked list. If there are two middle nodes, return the second middle node. Example 1: Input: [1,2,3,4,5]Output: Node">
-<meta name="keywords" content="Easy,Leetcode,LinkedList">
-<meta property="og:type" content="article">
-<meta property="og:title" content="876. Middle of the Linked List">
-<meta property="og:url" content="http://yoursite.com/2018/08/04/Middle-of-the-Linked-List/index.html">
+  <meta name="keywords" content="csharp">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog">
+<meta property="og:url" content="http://yoursite.com/tags/DP/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="Given a non-empty, singly linked list with head node head, return a middle node of linked list. If there are two middle nodes, return the second middle node. Example 1: Input: [1,2,3,4,5]Output: Node">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-08-31T22:13:15.089Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="876. Middle of the Linked List">
-<meta name="twitter:description" content="Given a non-empty, singly linked list with head node head, return a middle node of linked list. If there are two middle nodes, return the second middle node. Example 1: Input: [1,2,3,4,5]Output: Node">
+<meta name="twitter:title" content="Blog">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -58,7 +54,7 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="../../../../index.html">Main page</a></li>
+				<li><a href="../../index.html">Main page</a></li>
 	        
 			</ul>
 		</nav>
@@ -128,7 +124,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 100%"><a href="../../../../index.html">Main page</a></li>
+					<li style="width: 100%"><a href="../../index.html">Main page</a></li>
 		        
 				</ul>
 			</nav>
@@ -143,51 +139,42 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Middle-of-the-Linked-List" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      876. Middle of the Linked List
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="../../archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="../../2018/08/31/Binary-Trees-With-Factor/" class="archive-article-date">
+  	<time datetime="2018-08-31T22:59:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-31</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="../../2018/08/31/Binary-Trees-With-Factor/">823. Binary Trees With Factors</a>
     </h1>
   
 
-        
-        <a href="" class="archive-article-date">
-  	<time datetime="2018-08-04T18:21:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Given a non-empty, singly linked list with head node head, return a middle node of linked list.</p>
-<p>If there are two middle nodes, return the second middle node.</p>
-<p>Example 1:</p>
-<p><pre><code>Input: [1,2,3,4,5]<br>Output: Node 3 from this list (Serialization: [3,4,5])<br>The returned node has value 3.  (The judge’s serialization of this node is [3,4,5]).<br>Note that we returned a ListNode object ans, such that:<br>ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, and ans.next.next.next = NULL.<br></code></pre><br>Example 2:</p>
-<p><pre><code>Input: [1,2,3,4,5,6]<br>Output: Node 4 from this list (Serialization: [4,5,6])<br>Since the list has two middle nodes with values 3 and 4, we return the second one.<br> </code></pre></p>
-<p>Note:</p>
-<p>The number of nodes in the given list will be between 1 and 100.<br><a id="more"></a></p>
-<p>code:</p>
-<p>I create 2 pointers which are ‘fast’ and ‘slow’. fast pointer goes 2 time faster then slow, so that when fast pointer reaches to the end, we can see the slow pointer is at middle of the linked list.</p>
-<p>depends on fast pointer is at the end of the list or 2 node away from the end. I return either slow.next or slow for the answer.</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">MiddleNode</span>(<span class="params">ListNode head</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> result =  <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">var</span> fast = head;</span><br><span class="line">        <span class="keyword">var</span> slow = head;</span><br><span class="line">        <span class="keyword">while</span>(fast.next != <span class="literal">null</span> &amp;&amp; fast.next.next != <span class="literal">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">        &#125;   </span><br><span class="line">        <span class="keyword">if</span>(fast.next != <span class="literal">null</span>)</span><br><span class="line">            result.next = slow.next;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            result.next = slow;</span><br><span class="line">        <span class="keyword">return</span> result.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Easy</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Medium</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -195,70 +182,25 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LinkedList</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DP</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="../Leaf-Similar-Tree/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          872. Leaf-Similar Trees
-        
-      </div>
-    </a>
   
   
-    <a href="../../03/LC-add-new-number/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LC 2. Add Two Numbers</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -280,9 +222,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
