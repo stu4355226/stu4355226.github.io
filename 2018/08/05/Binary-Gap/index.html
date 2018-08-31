@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="Given a positive integer N, find and return the longest distance between two consecutive 1’s in the binary representation of N. If there aren’t two consecutive 1’s, return 0.">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-08-05T18:02:12.767Z">
+<meta property="og:updated_time" content="2018-08-31T22:11:32.887Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="868. Binary Gap">
 <meta name="twitter:description" content="Given a positive integer N, find and return the longest distance between two consecutive 1’s in the binary representation of N. If there aren’t two consecutive 1’s, return 0.">
@@ -175,7 +175,7 @@
 <p>1 &lt;= N &lt;= 10^9</p>
 <p>code:</p>
 <p>One pass on N in binary from right to left.<br>d means the distance from the last 1 position.<br>d is initial to a small enough value -32</p>
-<p><pre><code>public class Solution {<br>    public int BinaryGap(int N) {<br>        int res = 0;<br>        for(int d = -32; N &gt; 0; N /= 2, d++)<br>        {<br>            if(N % 2 == 1)<br>            {<br>                res = Math.Max(res, d);<br>                d = 0;<br>            }<br>        }<br>        return res;<br>    }<br>}</code></pre></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">BinaryGap</span>(<span class="params"><span class="keyword">int</span> N</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> d = <span class="number">-32</span>; N &gt; <span class="number">0</span>; N /= <span class="number">2</span>, d++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(N % <span class="number">2</span> == <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                res = Math.Max(res, d);</span><br><span class="line">                d = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -348,23 +348,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Array</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Medium</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">GraphQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -372,11 +360,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCOde</a>
+                <a href="javascript:void(0)" class="js-tag color2">Medium</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">String</a>
+                <a href="javascript:void(0)" class="js-tag color1">Array</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -385,6 +373,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Binary</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LeetCOde</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">String</a>
               </li>
              
               <li class="article-tag-list-item">

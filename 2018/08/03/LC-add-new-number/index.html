@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return i">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-08-04T06:57:17.277Z">
+<meta property="og:updated_time" content="2018-08-31T22:12:21.372Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LC 2. Add Two Numbers">
 <meta name="twitter:description" content="You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return i">
@@ -170,8 +170,7 @@
 <p><br><a id="more"></a></p>
 <p>Code:</p>
 <p>First of all, I create 2 pointers (result and temp). I use temp to preform the addition and the pointer will move to the end when the while loop is completed, then return the result.next pointer for the answer.</p>
-<p><pre><code>public class Solution {<br>    public ListNode AddTwoNumbers(ListNode l1, ListNode l2) {<br>        var result = new ListNode(0);<br>        var temp = result;<br>        int carry = 0;<br>        while(l1 != null || l2 != null || carry &gt;0)<br>        {<br>            int newValue = carry + (l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val);<br>            carry = newValue / 10;<br>            temp.next = new ListNode(newValue % 10);<br>            temp = temp.next;<br>            l1 = l1 == null ? null : l1.next;<br>            l2 = l2 == null ? null : l2.next;<br>        }<br>        return result.next;<br>    }<br>}</code></pre></p>
-<p></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">AddTwoNumbers</span>(<span class="params">ListNode l1, ListNode l2</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> result = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">var</span> temp = result;</span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(l1 != <span class="literal">null</span> || l2 != <span class="literal">null</span> || carry &gt;<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> newValue = carry + (l1 == <span class="literal">null</span> ? <span class="number">0</span> : l1.val) + (l2 == <span class="literal">null</span> ? <span class="number">0</span> : l2.val);</span><br><span class="line">            carry = newValue / <span class="number">10</span>;</span><br><span class="line">            temp.next = <span class="keyword">new</span> ListNode(newValue % <span class="number">10</span>);</span><br><span class="line">            temp = temp.next;</span><br><span class="line">            l1 = l1 == <span class="literal">null</span> ? <span class="literal">null</span> : l1.next;</span><br><span class="line">            l2 = l2 == <span class="literal">null</span> ? <span class="literal">null</span> : l2.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -344,23 +343,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Array</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Medium</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">GraphQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -368,11 +355,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCOde</a>
+                <a href="javascript:void(0)" class="js-tag color2">Medium</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">String</a>
+                <a href="javascript:void(0)" class="js-tag color1">Array</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -381,6 +368,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Binary</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LeetCOde</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">String</a>
               </li>
              
               <li class="article-tag-list-item">

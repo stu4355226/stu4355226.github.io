@@ -9,14 +9,14 @@
   <title>865. Smallest Subtree with all the Deepest Nodes | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Given a binary tree rooted at root, the depth of each node is the shortest distance to the root. A node is deepest if it has the largest depth possible among any node in the entire tree. The subtree o">
-<meta name="keywords" content="LeetCode,Medium,Tree">
+<meta name="keywords" content="LeetCode,Tree,Medium">
 <meta property="og:type" content="article">
 <meta property="og:title" content="865. Smallest Subtree with all the Deepest Nodes">
 <meta property="og:url" content="http://yoursite.com/2018/08/06/Smallest-Subtree-with-all-the-Deepest-Nodes/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="Given a binary tree rooted at root, the depth of each node is the shortest distance to the root. A node is deepest if it has the largest depth possible among any node in the entire tree. The subtree o">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-08-06T21:29:04.841Z">
+<meta property="og:updated_time" content="2018-08-31T22:13:52.396Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="865. Smallest Subtree with all the Deepest Nodes">
 <meta name="twitter:description" content="Given a binary tree rooted at root, the depth of each node is the shortest distance to the root. A node is deepest if it has the largest depth possible among any node in the entire tree. The subtree o">
@@ -175,7 +175,7 @@
 <p>Code:</p>
 <p>I go through the node by using post-order traversal(left, right, val) and pass through the int represent the deep value.</p>
 <p>there are the conditions:<br>1, if the node is null, go back (d value - 1)<br>2, if left node is exist, go left node<br>3, if right node is exist, then go right<br>4, when left’s d value and right’s d value and left’s D value is grater or equal than maxD we have. Set current left node’s D value as the answer.</p>
-<p><pre><code>public class Solution {<br>    TreeNode result;<br>    int maxD = -1;<br>    public TreeNode SubtreeWithAllDeepest(TreeNode root) {<br>        dfs(root, 0);<br>        return result;<br>    }<br>    private int dfs(TreeNode node, int d)<br>    {<br>        if(node == null) return d-1;<br>        int left = dfs(node.left, d+1);<br>        int right = dfs(node.right, d+1);<br>        if(left == right &amp;&amp; left &gt;=maxD)<br>        {<br>            result = node;<br>            maxD = left;<br>        }<br>        return Math.Max(left, right);<br>    }<br>}<br></code></pre></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    TreeNode result;</span><br><span class="line">    int maxD = -1;</span><br><span class="line">    public TreeNode SubtreeWithAllDeepest(TreeNode root) &#123;</span><br><span class="line">        dfs(root, 0);</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    private int dfs(TreeNode node, int d)</span><br><span class="line">    &#123;</span><br><span class="line">        if(node == null) return d-1;</span><br><span class="line">        int left = dfs(node.left, d+1);</span><br><span class="line">        int right = dfs(node.right, d+1);</span><br><span class="line">        if(left == right &amp;&amp; left &gt;=maxD)</span><br><span class="line">        &#123;</span><br><span class="line">            result = node;</span><br><span class="line">            maxD = left;</span><br><span class="line">        &#125;</span><br><span class="line">        return Math.Max(left, right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -193,11 +193,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Medium</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Medium</a>
         		</li>
       		
 		</ul>
@@ -348,23 +348,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Array</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Medium</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">GraphQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -372,11 +360,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCOde</a>
+                <a href="javascript:void(0)" class="js-tag color2">Medium</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">String</a>
+                <a href="javascript:void(0)" class="js-tag color1">Array</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -385,6 +373,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Binary</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LeetCOde</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">String</a>
               </li>
              
               <li class="article-tag-list-item">

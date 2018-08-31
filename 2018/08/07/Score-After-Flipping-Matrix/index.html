@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="We have a two dimensional matrix A where each value is 0 or 1. A move consists of choosing any row or column, and toggling each value in that row or column: changing all 0s to 1s, and all 1s to 0s. Af">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-08-08T04:56:49.218Z">
+<meta property="og:updated_time" content="2018-08-31T22:13:31.110Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="861. Score After Flipping Matrix">
 <meta name="twitter:description" content="We have a two dimensional matrix A where each value is 0 or 1. A move consists of choosing any row or column, and toggling each value in that row or column: changing all 0s to 1s, and all 1s to 0s. Af">
@@ -179,7 +179,7 @@
 </li>
 </ol>
 <p>Time Complexity:<br>O(MN)</p>
-<p><pre><code>public class Solution {<br>    public int MatrixScore(int[][] A) {<br>        int M = A.Length, N = A[0].Length, res = (1 &lt;&lt; (N - 1)) <em> M;<br>        for (int j = 1; j &lt; N; j++) {<br>            int cur = 0;<br>            for (int i = 0; i &lt; M; i++) cur += A[i][j] == A[i][0] ? 1:0;<br>            res += Math.Max(cur, M - cur) </em> (1 &lt;&lt; (N - j - 1));<br>        }<br>        return res;<br>    }<br>}<br></code></pre></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">MatrixScore</span>(<span class="params"><span class="keyword">int</span>[][] A</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> M = A.Length, N = A[<span class="number">0</span>].Length, res = (<span class="number">1</span> &lt;&lt; (N - <span class="number">1</span>)) * M;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; N; j++) &#123;</span><br><span class="line">            <span class="keyword">int</span> cur = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; M; i++) cur += A[i][j] == A[i][<span class="number">0</span>] ? <span class="number">1</span>:<span class="number">0</span>;</span><br><span class="line">            res += Math.Max(cur, M - cur) * (<span class="number">1</span> &lt;&lt; (N - j - <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -352,23 +352,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Array</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Medium</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">GraphQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -376,11 +364,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCOde</a>
+                <a href="javascript:void(0)" class="js-tag color2">Medium</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">String</a>
+                <a href="javascript:void(0)" class="js-tag color1">Array</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -389,6 +377,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Binary</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LeetCOde</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">String</a>
               </li>
              
               <li class="article-tag-list-item">

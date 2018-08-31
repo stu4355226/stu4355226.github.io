@@ -9,14 +9,14 @@
   <title>875. Koko Eating Bananas | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Koko loves to eat bananas.  There are N piles of bananas, the i-th pile has piles[i] bananas.  The guards have gone and will come back in H hours. Koko can decide her bananas-per-hour eating speed of">
-<meta name="keywords" content="Array,Medium,Leetcode">
+<meta name="keywords" content="Medium,Array,Leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="875. Koko Eating Bananas">
 <meta property="og:url" content="http://yoursite.com/2018/08/04/Koko-Eating-Bananas/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="Koko loves to eat bananas.  There are N piles of bananas, the i-th pile has piles[i] bananas.  The guards have gone and will come back in H hours. Koko can decide her bananas-per-hour eating speed of">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-08-05T06:38:07.660Z">
+<meta property="og:updated_time" content="2018-08-31T22:12:09.356Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="875. Koko Eating Bananas">
 <meta name="twitter:description" content="Koko loves to eat bananas.  There are N piles of bananas, the i-th pile has piles[i] bananas.  The guards have gone and will come back in H hours. Koko can decide her bananas-per-hour eating speed of">
@@ -178,19 +178,7 @@
 <p>we see that the range of piles can be from 1 to 10^9.<br>so that when when I do the binary search, the low and high pointer in the array will be 1 and (int)1e9.</p>
 <p> After that, we find the mid value of low and high pointer and check if it meets the requirements to finish all the banana in time. If it meets the requirements, mid value will be set to high pointer and do the search again, if it doesn’t meet the requirements, the mid value will be set to low pointer + 1 and search.</p>
 <p>this way we can determine the time it takes to eat all the piles, and we return low pointer which is the smallest K for which  canFinish(K) &lt;= H.</p>
-<p><pre><code>public class Solution {<br>    public int MinEatingSpeed(int[] piles, int H) {<br>        int max = (int)1e9;<br>        int low = 1;<br>        int high = max;<br>        while(low &lt; high)<br>        {<br>            int mid = (low + high) / 2;<br>            if(canFinish(piles, mid, H))<br>                high = mid;<br>            else<br>                low = mid + 1;<br>        }<br>        return low;<br>    }</code></pre></p>
-<pre><code>private bool canFinish(int[] piles, int speed, int time)
-{
-    int total = 0;
-    foreach(var pile in piles)
-    {
-        total += (pile + speed - 1) / speed;
-        if(total &gt; time)
-            return false;
-    }
-    return true;
-}
-</code></pre><p>}<br></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">MinEatingSpeed</span>(<span class="params"><span class="keyword">int</span>[] piles, <span class="keyword">int</span> H</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> max = (<span class="keyword">int</span>)<span class="number">1e9</span>;</span><br><span class="line">        <span class="keyword">int</span> low = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> high = max;</span><br><span class="line">        <span class="keyword">while</span>(low &lt; high)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (low + high) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(canFinish(piles, mid, H))</span><br><span class="line">                high = mid;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                low = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> low;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">bool</span> <span class="title">canFinish</span>(<span class="params"><span class="keyword">int</span>[] piles, <span class="keyword">int</span> speed, <span class="keyword">int</span> time</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> total = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">foreach</span>(<span class="keyword">var</span> pile <span class="keyword">in</span> piles)</span><br><span class="line">        &#123;</span><br><span class="line">            total += (pile + speed - <span class="number">1</span>) / speed;</span><br><span class="line">            <span class="keyword">if</span>(total &gt; time)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -204,11 +192,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Array</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Medium</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Medium</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Array</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -363,23 +351,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Array</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Medium</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">GraphQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -387,11 +363,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCOde</a>
+                <a href="javascript:void(0)" class="js-tag color2">Medium</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">String</a>
+                <a href="javascript:void(0)" class="js-tag color1">Array</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -400,6 +376,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Binary</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LeetCOde</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">String</a>
               </li>
              
               <li class="article-tag-list-item">

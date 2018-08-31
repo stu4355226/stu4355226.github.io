@@ -9,14 +9,14 @@
   <title>870. Advantage Shuffle | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Given two arrays A and B of equal size, the advantage of A with respect to B is the number of indices i for which A[i] &amp;gt; B[i]. Return any permutation of A that maximizes its advantage with respect">
-<meta name="keywords" content="LeetCode,Array,Medium">
+<meta name="keywords" content="LeetCode,Medium,Array">
 <meta property="og:type" content="article">
 <meta property="og:title" content="870. Advantage Shuffle">
 <meta property="og:url" content="http://yoursite.com/2018/08/05/Advantage-Shuffle/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="Given two arrays A and B of equal size, the advantage of A with respect to B is the number of indices i for which A[i] &amp;gt; B[i]. Return any permutation of A that maximizes its advantage with respect">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-08-05T07:53:15.340Z">
+<meta property="og:updated_time" content="2018-08-31T22:10:23.726Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="870. Advantage Shuffle">
 <meta name="twitter:description" content="Given two arrays A and B of equal size, the advantage of A with respect to B is the number of indices i for which A[i] &amp;gt; B[i]. Return any permutation of A that maximizes its advantage with respect">
@@ -170,40 +170,7 @@
 <p><pre><code>Input: A = [12,24,8,32], B = [13,25,32,11]<br>Output: [24,32,8,12]<br> </code></pre></p>
 <p>Note:</p>
 <p>1 &lt;= A.length = B.length &lt;= 10000<br>0 &lt;= A[i] &lt;= 10^9<br>0 &lt;= B[i] &lt;= 10^9<br><a id="more"></a><br>Code:</p>
-<p><pre><code>public class Solution {<br>    public int[] AdvantageCount(int[] A, int[] B) {<br>        if(A.Length &lt;=1) return A;<br>        int[] sortedB = new int[B.Length];<br>        Array.Copy(B, sortedB, B.Length);<br>        Array.Sort(sortedB);<br>        Array.Sort(A);<br>        Dictionary&lt;int,List<int>&gt; dics = new Dictionary&lt;int,List<int>&gt;();<br>        int i = 0, j= 0, endA = A.Length -1, endB = B.Length -1;</int></int></code></pre></p>
-<pre><code>    while(i&lt;= endA &amp;&amp; j &lt;= endB)
-    {
-        if(A[i] &gt; sortedB[j])
-        {
-            if (dics.ContainsKey(sortedB[j]))
-                dics[sortedB[j]].Add(A[i]);
-            else
-                dics[sortedB[j]] = new List&lt;int&gt;{A[i]};
-
-            i++; j++;
-        }
-        else 
-        {
-             if (dics.ContainsKey(sortedB[endB]))
-                dics[sortedB[endB]].Add(A[i]);
-            else
-                dics[sortedB[endB]] =  new List&lt;int&gt;{A[i]};
-
-            endB--; i++;
-        }
-    }
-
-   for(int k = 0; k &lt; B.Length; k++)
-   {
-       A[k] = dics[B[k]].First();
-       dics[B[k]].Remove(A[k]);
-   }
-
-
-    return A;
-
-}
-</code></pre><p>}<br></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span>[] <span class="title">AdvantageCount</span>(<span class="params"><span class="keyword">int</span>[] A, <span class="keyword">int</span>[] B</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(A.Length &lt;=<span class="number">1</span>) <span class="keyword">return</span> A;</span><br><span class="line">        <span class="keyword">int</span>[] sortedB = <span class="keyword">new</span> <span class="keyword">int</span>[B.Length];</span><br><span class="line">        Array.Copy(B, sortedB, B.Length);</span><br><span class="line">        Array.Sort(sortedB);</span><br><span class="line">        Array.Sort(A);</span><br><span class="line">        Dictionary&lt;<span class="keyword">int</span>,List&lt;<span class="keyword">int</span>&gt;&gt; dics = <span class="keyword">new</span> Dictionary&lt;<span class="keyword">int</span>,List&lt;<span class="keyword">int</span>&gt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j= <span class="number">0</span>, endA = A.Length <span class="number">-1</span>, endB = B.Length <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(i&lt;= endA &amp;&amp; j &lt;= endB)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(A[i] &gt; sortedB[j])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (dics.ContainsKey(sortedB[j]))</span><br><span class="line">                    dics[sortedB[j]].Add(A[i]);</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    dics[sortedB[j]] = <span class="keyword">new</span> List&lt;<span class="keyword">int</span>&gt;&#123;A[i]&#125;;</span><br><span class="line"></span><br><span class="line">                i++; j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">            &#123;</span><br><span class="line">                 <span class="keyword">if</span> (dics.ContainsKey(sortedB[endB]))</span><br><span class="line">                    dics[sortedB[endB]].Add(A[i]);</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    dics[sortedB[endB]] =  <span class="keyword">new</span> List&lt;<span class="keyword">int</span>&gt;&#123;A[i]&#125;;</span><br><span class="line"></span><br><span class="line">                endB--; i++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; B.Length; k++)</span><br><span class="line">       &#123;</span><br><span class="line">           A[k] = dics[B[k]].First();</span><br><span class="line">           dics[B[k]].Remove(A[k]);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> A;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -221,11 +188,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Array</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Medium</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Medium</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Array</a>
         		</li>
       		
 		</ul>
@@ -376,23 +343,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Array</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Medium</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">GraphQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -400,11 +355,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCOde</a>
+                <a href="javascript:void(0)" class="js-tag color2">Medium</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">String</a>
+                <a href="javascript:void(0)" class="js-tag color1">Array</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -413,6 +368,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Binary</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LeetCOde</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">String</a>
               </li>
              
               <li class="article-tag-list-item">

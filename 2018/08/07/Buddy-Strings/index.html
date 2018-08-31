@@ -9,14 +9,14 @@
   <title>859. Buddy Strings | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Given two strings A and B of lowercase letters, return true if and only if we can swap two letters in A so that the result equals B.">
-<meta name="keywords" content="LeetCOde,String,Easy">
+<meta name="keywords" content="Easy,LeetCOde,String">
 <meta property="og:type" content="article">
 <meta property="og:title" content="859. Buddy Strings">
 <meta property="og:url" content="http://yoursite.com/2018/08/07/Buddy-Strings/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="Given two strings A and B of lowercase letters, return true if and only if we can swap two letters in A so that the result equals B.">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-08-08T05:10:36.980Z">
+<meta property="og:updated_time" content="2018-08-31T22:11:55.780Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="859. Buddy Strings">
 <meta name="twitter:description" content="Given two strings A and B of lowercase letters, return true if and only if we can swap two letters in A so that the result equals B.">
@@ -176,7 +176,7 @@
 <p>If A.length() != B.length(): no possible swap</p>
 <p>If A == B, we need swap two same characters. Check is duplicated char in A.</p>
 <p>In other cases, we find index for A[i] != B[i]. There should be only 2 diffs and it’s our one swap.</p>
-<p><pre><code>public class Solution {<br>    public bool BuddyStrings(string A, string B) {<br>        if (A.Length != B.Length) return false;<br>        if (A.Equals(B)) {<br>            HashSet<char> s = new HashSet<char>();<br>            foreach(var c in A) s.Add(c);<br>            return s.Count &lt; A.Length;<br>        }<br>        List<int> dif = new List<int>();<br>        for (int i = 0; i &lt; A.Length; ++i)<br>            if (A[i] != B[i])<br>                dif.Add(i);<br>        return dif.Count == 2 &amp;&amp; A[dif[0]] == B[dif[1]] &amp;&amp; A[dif[1]] == B[dif[0]];<br>    }<br>}<br></int></int></char></char></code></pre></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">bool</span> <span class="title">BuddyStrings</span>(<span class="params"><span class="keyword">string</span> A, <span class="keyword">string</span> B</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (A.Length != B.Length) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (A.Equals(B)) &#123;</span><br><span class="line">            HashSet&lt;<span class="keyword">char</span>&gt; s = <span class="keyword">new</span> HashSet&lt;<span class="keyword">char</span>&gt;();</span><br><span class="line">            <span class="keyword">foreach</span>(<span class="keyword">var</span> c <span class="keyword">in</span> A) s.Add(c);</span><br><span class="line">            <span class="keyword">return</span> s.Count &lt; A.Length;</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;<span class="keyword">int</span>&gt; dif = <span class="keyword">new</span> List&lt;<span class="keyword">int</span>&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.Length; ++i) </span><br><span class="line">            <span class="keyword">if</span> (A[i] != B[i]) </span><br><span class="line">                dif.Add(i);</span><br><span class="line">        <span class="keyword">return</span> dif.Count == <span class="number">2</span> &amp;&amp; A[dif[<span class="number">0</span>]] == B[dif[<span class="number">1</span>]] &amp;&amp; A[dif[<span class="number">1</span>]] == B[dif[<span class="number">0</span>]];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -190,15 +190,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Easy</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCOde</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">String</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Easy</a>
         		</li>
       		
 		</ul>
@@ -349,23 +349,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Array</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Medium</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">GraphQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -373,11 +361,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCOde</a>
+                <a href="javascript:void(0)" class="js-tag color2">Medium</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">String</a>
+                <a href="javascript:void(0)" class="js-tag color1">Array</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -386,6 +374,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Binary</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LeetCOde</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">String</a>
               </li>
              
               <li class="article-tag-list-item">

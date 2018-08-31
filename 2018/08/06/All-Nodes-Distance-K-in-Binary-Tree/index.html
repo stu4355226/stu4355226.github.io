@@ -9,14 +9,14 @@
   <title>863. All Nodes Distance K in Binary Tree | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="We are given a binary tree (with root node root), a target node, and an integer value K. Return a list of the values of all nodes that have a distance K from the target node.  The answer can be return">
-<meta name="keywords" content="LeetCode,Medium,Tree">
+<meta name="keywords" content="LeetCode,Tree,Medium">
 <meta property="og:type" content="article">
 <meta property="og:title" content="863. All Nodes Distance K in Binary Tree">
 <meta property="og:url" content="http://yoursite.com/2018/08/06/All-Nodes-Distance-K-in-Binary-Tree/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="We are given a binary tree (with root node root), a target node, and an integer value K. Return a list of the values of all nodes that have a distance K from the target node.  The answer can be return">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-08-06T21:28:54.060Z">
+<meta property="og:updated_time" content="2018-08-31T22:11:13.872Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="863. All Nodes Distance K in Binary Tree">
 <meta name="twitter:description" content="We are given a binary tree (with root node root), a target node, and an integer value K. Return a list of the values of all nodes that have a distance K from the target node.  The answer can be return">
@@ -187,7 +187,7 @@
 <li>if nodeLogs has current node history, pull out the node and check find all kids for this node.</li>
 <li>return pre list.</li>
 </ol>
-<p><pre><code>public class Solution {<br>    TreeNode[] nodeLogs;<br>    bool[] visited;<br>    public IList<int> DistanceK(TreeNode root, TreeNode target, int K) {<br>        IList<int> ans = new List<int>();<br>        nodeLogs = new TreeNode[501];<br>        visited = new bool[501];<br>        if(root == target)<br>            return findKids(root, K, ans);<br>        Queue<treenode> queue = new Queue<treenode>();<br>        queue.Enqueue(root);<br>        while(queue.Any())<br>        {<br>            int size = queue.Count;<br>            for(int i = 0; i &lt; size; i++)<br>            {<br>                TreeNode current = queue.Dequeue();<br>                if(current == target)<br>                    return findAlls(current, K, ans);<br>                if(current.left != null)<br>                {<br>                    nodeLogs[current.left.val] = current;<br>                    queue.Enqueue(current.left);<br>                }<br>                if(current.right != null)<br>                {<br>                    nodeLogs[current.right.val] = current;<br>                    queue.Enqueue(current.right);<br>                }<br>            }<br>        }<br>        return ans;<br>    }<br>    private IList<int> findAlls(TreeNode target, int dis, IList<int> pre)<br>    {<br>        pre = findKids(target, dis, pre);<br>        if(nodeLogs[target.val] != null)<br>        {<br>            TreeNode pn = nodeLogs[target.val];<br>            pre = findAlls(pn, dis - 1, pre);<br>        }<br>        return pre;<br>    }<br>    private IList<int> findKids(TreeNode root, int dis, IList<int> pre)<br>    {<br>        if(root == null || visited[root.val]) return pre;<br>        visited[root.val] = true;<br>        if(dis == 0)<br>        {<br>            pre.Add(root.val);<br>            return pre;<br>        }<br>        pre = findKids(root.left, dis - 1, pre);<br>        pre = findKids(root.right, dis - 1, pre);<br>        return pre;<br>    }<br>}<br></int></int></int></int></treenode></treenode></int></int></int></code></pre></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    TreeNode[] nodeLogs;</span><br><span class="line">    <span class="keyword">bool</span>[] visited;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> IList&lt;<span class="keyword">int</span>&gt; <span class="title">DistanceK</span>(<span class="params">TreeNode root, TreeNode target, <span class="keyword">int</span> K</span>) </span>&#123;</span><br><span class="line">        IList&lt;<span class="keyword">int</span>&gt; ans = <span class="keyword">new</span> List&lt;<span class="keyword">int</span>&gt;();</span><br><span class="line">        nodeLogs = <span class="keyword">new</span> TreeNode[<span class="number">501</span>];</span><br><span class="line">        visited = <span class="keyword">new</span> <span class="keyword">bool</span>[<span class="number">501</span>];</span><br><span class="line">        <span class="keyword">if</span>(root == target) </span><br><span class="line">            <span class="keyword">return</span> findKids(root, K, ans);</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> Queue&lt;TreeNode&gt;();</span><br><span class="line">        queue.Enqueue(root);</span><br><span class="line">        <span class="keyword">while</span>(queue.Any())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> size = queue.Count;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                TreeNode current = queue.Dequeue();</span><br><span class="line">                <span class="keyword">if</span>(current == target) </span><br><span class="line">                    <span class="keyword">return</span> findAlls(current, K, ans);</span><br><span class="line">                <span class="keyword">if</span>(current.left != <span class="literal">null</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    nodeLogs[current.left.val] = current;</span><br><span class="line">                    queue.Enqueue(current.left);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(current.right != <span class="literal">null</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    nodeLogs[current.right.val] = current;</span><br><span class="line">                    queue.Enqueue(current.right);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> IList&lt;<span class="keyword">int</span>&gt; <span class="title">findAlls</span>(<span class="params">TreeNode target, <span class="keyword">int</span> dis, IList&lt;<span class="keyword">int</span>&gt; pre</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        pre = findKids(target, dis, pre);</span><br><span class="line">        <span class="keyword">if</span>(nodeLogs[target.val] != <span class="literal">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            TreeNode pn = nodeLogs[target.val];</span><br><span class="line">            pre = findAlls(pn, dis - <span class="number">1</span>, pre);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pre;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> IList&lt;<span class="keyword">int</span>&gt; <span class="title">findKids</span>(<span class="params">TreeNode root, <span class="keyword">int</span> dis, IList&lt;<span class="keyword">int</span>&gt; pre</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">null</span> || visited[root.val]) <span class="keyword">return</span> pre;</span><br><span class="line">        visited[root.val] = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(dis == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            pre.Add(root.val);</span><br><span class="line">            <span class="keyword">return</span> pre;</span><br><span class="line">        &#125;</span><br><span class="line">        pre = findKids(root.left, dis - <span class="number">1</span>, pre);</span><br><span class="line">        pre = findKids(root.right, dis - <span class="number">1</span>, pre);</span><br><span class="line">        <span class="keyword">return</span> pre;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -205,11 +205,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Medium</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Medium</a>
         		</li>
       		
 		</ul>
@@ -360,23 +360,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Array</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Medium</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">GraphQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -384,11 +372,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCOde</a>
+                <a href="javascript:void(0)" class="js-tag color2">Medium</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">String</a>
+                <a href="javascript:void(0)" class="js-tag color1">Array</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -397,6 +385,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Binary</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LeetCOde</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">String</a>
               </li>
              
               <li class="article-tag-list-item">

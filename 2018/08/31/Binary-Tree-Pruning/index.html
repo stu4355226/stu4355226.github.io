@@ -9,14 +9,14 @@
   <title>814. Binary Tree Pruning | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="We are given the head node root of a binary tree, where additionally every node’s value is either a 0 or a 1. Return the same tree where every subtree (of the given tree) not containing a 1 has been r">
-<meta name="keywords" content="Medium,Leetcode,Tree">
+<meta name="keywords" content="Tree,Medium,Leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="814. Binary Tree Pruning">
 <meta property="og:url" content="http://yoursite.com/2018/08/31/Binary-Tree-Pruning/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="We are given the head node root of a binary tree, where additionally every node’s value is either a 0 or a 1. Return the same tree where every subtree (of the given tree) not containing a 1 has been r">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2018-08-31T22:09:06.991Z">
+<meta property="og:updated_time" content="2018-08-31T22:11:41.984Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="814. Binary Tree Pruning">
 <meta name="twitter:description" content="We are given the head node root of a binary tree, where additionally every node’s value is either a 0 or a 1. Return the same tree where every subtree (of the given tree) not containing a 1 has been r">
@@ -170,10 +170,11 @@
 <p>Explanation:<br>Only the red nodes satisfy the property “every subtree not containing a 1”.<br>The diagram on the right represents the answer.</p>
 <p>Example 2:<br>Input: [1,0,1,0,0,0,1]<br>Output: [1,null,1,null,1]</p>
 <p>Example 3:<br>Input: [1,1,0,1,1,0,1,0]<br>Output: [1,1,0,1,1,null,1]</p>
-<p>Note:</p>
-<p>The binary tree will have at most 100 nodes.<br>The value of each node will only be 0 or 1.</p>
+<p>Note:<br>The binary tree will have at most 100 nodes.<br>The value of each node will only be 0 or 1.</p>
+<a id="more"></a>
 <p>Code:</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     public int val;</span></span><br><span class="line"><span class="comment"> *     public TreeNode left;</span></span><br><span class="line"><span class="comment"> *     public TreeNode right;</span></span><br><span class="line"><span class="comment"> *     public TreeNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">PruneTree</span>(<span class="params">TreeNode root</span>) </span>&#123;</span><br><span class="line">        TreeNode result = recursePruning(root);</span><br><span class="line">        <span class="keyword">if</span>(root.val == <span class="literal">null</span> &amp;&amp; root.left == <span class="literal">null</span> &amp;&amp; root.right == <span class="literal">null</span>)</span><br><span class="line">            result = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> TreeNode <span class="title">recursePruning</span>(<span class="params">TreeNode root</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        TreeNode left = recursePruning(root.left);</span><br><span class="line">        <span class="keyword">if</span>(left == <span class="literal">null</span>)</span><br><span class="line">            root.left = <span class="literal">null</span>;</span><br><span class="line">        TreeNode right = recursePruning(root.right);</span><br><span class="line">        <span class="keyword">if</span>(right == <span class="literal">null</span>)</span><br><span class="line">            root.right = <span class="literal">null</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(root.val == <span class="number">0</span> &amp;&amp; root.left == <span class="literal">null</span> &amp;&amp; root.right == <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -186,15 +187,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Medium</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tree</a>
         		</li>
       		
 		</ul>
@@ -336,23 +337,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Array</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Medium</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">GraphQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -360,11 +349,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCOde</a>
+                <a href="javascript:void(0)" class="js-tag color2">Medium</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">String</a>
+                <a href="javascript:void(0)" class="js-tag color1">Array</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -373,6 +362,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Binary</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LeetCOde</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">String</a>
               </li>
              
               <li class="article-tag-list-item">
